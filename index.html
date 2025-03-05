@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSNA Power Gale 2K25</title>
+    <link rel="icon" href="./img/psna-icon.jpeg">
+    <link rel="stylesheet" href="styles.css"> <!-- Include CSS File -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<style>
+    /* General Styling */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: scale(0.95); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+
+    .live-background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('./img/background.jpg') no-repeat center center/cover;
+        z-index: -1;
+        filter: blur(3px) brightness(0.7);
+    }
+
+    /* Animated Gradient Header */
+    .power-gale-heading {
+        font-size: 4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #ffffff, #cccccc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.7); }
+        100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1); }
+    }
+
+    /* Smooth Buttons */
+    .btn-custom {
+        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        color: white;
+        font-size: 1.5rem;
+        padding: 12px 24px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        box-shadow: 0px 4px 15px rgba(255, 75, 43, 0.6);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-custom:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 6px 20px rgba(255, 75, 43, 0.8);
+    }
+
+    /* Event Cards */
+    .event-card {
+        border-radius: 15px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 15px;
+    }
+
+    .event-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .card video {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .card video:hover {
+        opacity: 0.8;
+    }
+</style>
+<style>
+    /* Event Cards Styling */
+.event-card {
+border-radius: 15px;
+overflow: hidden;
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+margin-bottom: 30px; /* Adds spacing between cards */
+padding: 10px; /* Adds some inner spacing */
+}
+
+/* Hover Effect */
+.event-card:hover {
+transform: scale(1.05);
+box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Images */
+.event-card .card-img-top {
+height: 200px;
+object-fit: cover;
+border-radius: 10px 10px 0 0;
+}
+
+/* Card Title */
+.event-card .card-title {
+font-size: 1.5rem;
+font-weight: bold;
+color: #0072ff;
+}
+
+/* Remove Underline from Links */
+.event-card-link {
+text-decoration: none;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+.event-card {
+  margin-bottom: 20px; /* Adjust spacing for mobile */
+}
+.event-card .card-title {
+  font-size: 1.2rem;
+}
+}
+
+
+
+
+/* Title Styling */
+.exciting-title {
+font-size: 2rem;
+font-weight: bold;
+color: #ffcc00;
+text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+margin-bottom: 20px;
+}
+
+/* Glassmorphism Box */
+.exciting-box {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+padding: 20px;
+border: 1px solid rgba(255, 255, 255, 0.3);
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+max-width: 600px;
+margin: auto;
+}
+
+/* List Styling */
+.exciting-list {
+padding: 0;
+}
+
+/* List Items */
+.exciting-list .list-group-item {
+background: transparent;
+border: none;
+font-size: 1.3rem;
+font-weight: 500;
+color: white;
+display: flex;
+align-items: center;
+padding: 15px;
+transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.exciting-list .list-group-item:hover {
+transform: scale(1.05);
+color: #ffcc00;
+}
+
+/* Icons */
+.icon {
+font-size: 1.8rem;
+margin-right: 15px;
+}
+
+
+
+
+/* Glowing Power Gale Heading */
+.power-gale-heading {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffffff, #d1d1d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
+    100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1); }
+}
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #ffffff; }
+            100% { text-shadow: 0 0 40px #ffffff; }
+        }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.power-gale-heading {
+  font-size: 3rem;
+}
+}
+
+
+
+
+/* Section Title */
+.section-title {
+font-size: 2rem;
+font-weight: bold;
+text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+margin-bottom: 20px;
+}
+
+/* Glassmorphism Box */
+.info-box {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+padding: 20px;
+border: 1px solid rgba(255, 255, 255, 0.3);
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+max-width: 600px;
+margin: auto;
+}
+
+/* List Styling */
+.info-list {
+padding: 0;
+}
+
+/* List Items */
+.info-list .list-group-item {
+background: transparent;
+border: none;
+font-size: 1.3rem;
+font-weight: 500;
+color: white;
+display: flex;
+align-items: center;
+padding: 15px;
+transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.info-list .list-group-item:hover {
+transform: scale(1.05);
+color: #ffcc00;
+}
+
+/* Icons */
+.list-group-item span {
+font-size: 1.8rem;
+margin-right: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.section-title {
+  font-size: 1.8rem;
+}
+.info-box {
+  max-width: 90%;
+}
+}
+
+
+
+
+
+
+
+.event-logo {
+max-width: 250px;
+display: block;
+margin: 0 auto;
+}
+
+.card {
+transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+transform: scale(1.05);
+}
+@keyframes gradientAnimation {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+@keyframes moveLines {
+0% { transform: translateX(-100%); opacity: 0; }
+50% { opacity: 1; }
+100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes blinkParticles {
+0%, 100% { opacity: 0.2; }
+50% { opacity: 1; }
+}
+
+/* Main animated background */
+.live-background {
+background: linear-gradient(-45deg, #0a192f, #1f4068, #278ea5, #1b1b2f);
+background-size: 400% 400%;
+animation: gradientAnimation 8s ease infinite;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+overflow: hidden;
+}
+
+/* Flowing neon circuit lines */
+.live-background::before,
+.live-background::after {
+content: "";
+position: absolute;
+width: 200%;
+height: 3px;
+background: rgba(0, 255, 255, 0.7);
+top: 30%;
+left: -50%;
+animation: moveLines 6s linear infinite;
+}
+
+.live-background::after {
+top: 70%;
+animation-duration: 8s;
+}
+
+/* Blinking particles */
+.particle {
+position: absolute;
+width: 5px;
+height: 5px;
+background: rgba(0, 255, 255, 0.8);
+border-radius: 50%;
+animation: blinkParticles 2s infinite alternate;
+}
+
+/* Video Background */
+.video-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+z-index: -1; /* Send the video behind all content */
+}
+
+.background-video {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100%;
+height: 100%;
+object-fit: cover; /* Cover the full screen */
+opacity: 0.7; /* Adjust transparency for better readability */
+}
+
+/* Electric Glow Effect for Text */
+.text-glow {
+color: #00ffff;
+text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+
+
+
+/* Ensure the video fits like an image */
+.card video {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 10px 10px 0 0;
+}
+
+
+
+/* Ensure Smooth Video Playback */
+.card video {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 10px 10px 0 0;
+transition: opacity 0.3s ease-in-out;
+}
+
+/* Fade-in Effect on Hover */
+.card video:hover {
+opacity: 0.8;
+}
+
+</style>
+<body>
+   
+    <div class="live-background"></div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="/img/psna-logo.png" alt="PSNA LOGO" class="logo">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <h1 class="display-4 fw-bold">PSNA College of Engineering and Technology</h1>
+        <p class="lead mt-4 mb-4"><strong>Department of Electrical and Electronics Engineering</strong></p>
+        <h1 class="power-gale-heading event-year">POWER GALE <br>2K25</h1>
+        <!-- <h2 class="">2K25</h2> -->
+        <h4 class="text-danger">9th April 2025</h4>
+    </div>
+
+    <div class="container text-center mt-4">
+        <h1>Event Brochure</h1>
+        <p>Click the button below to view/download the brochure:</p>
+        <a href="brochure.pdf" class="btn btn-success mt-2">View Brochure</a>
+    </div>
+
+    <div class="container mt-4">
+        <h2 class="text-center exciting-title">🌟 Discover Our Exciting New Arrivals! 🌟</h2>
+        <div class="exciting-box">
+            <ul class="list-group exciting-list">
+                <li class="list-group-item">🏆 Exciting Cash Prizes</li>
+                <li class="list-group-item">📜 Participation Certificates Provided</li>
+                <li class="list-group-item">🍽 Refreshments and Lunch Included</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center text-primary">🚀 Technical Events 🚀</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <a href="task1.html" class="event-card-link">
+                    <div class="card event-card">
+                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
+                            <source src="./img/" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">PAPER VISTA</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="task2.html" class="event-card-link">
+                    <div class="card event-card">
+                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
+                            <source src="./img/" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">CLASH FORUM</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="task3.html" class="event-card-link">
+                    <div class="card event-card">
+                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
+                            <source src="./img/" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">GRAPHI PLOSION</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="task4.html" class="event-card-link">
+                    <div class="card event-card">
+                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
+                            <source src="./img/" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">SPEECH FRENZY</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="task5.html" class="event-card-link">
+                    <div class="card event-card">
+                        <img class="card-img-top" src="./img/coding1.png" alt="">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">GLITCHFIX</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="task6.html" class="event-card-link">
+                    <div class="card event-card">
+                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
+                            <source src="./img/" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">ROLL & RISE</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center section-title">🏛 College Officials</h2>
+        <ul class="list-group info-list">
+            <li class="list-group-item">👨‍🏫 Name 1</li>
+            <li class="list-group-item">👨‍🏫 Name 2</li>
+        </ul>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center section-title">🧑‍🏫 Staff Incharge</h2>
+        <ul class="list-group info-list">
+            <li class="list-group-item">👩‍🏫 Dr. I. Gerald Christopher Raj</li>
+            <li class="list-group-item">👩‍🏫 Mr. B. Pushpavanam</li>
+        </ul>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <h2 class="text-center section-title">🎓 Student Incharge</h2>
+        <ul class="list-group info-list">
+            <li class="list-group-item">👨‍🎓 Dhanush Kumar C</li>
+            <li class="list-group-item">👨‍🎓 Pavithraa M</li>
+            <li class="list-group-item">👨‍🎓 Avishkar M S</li>
+            <li class="list-group-item">👨‍🎓 Priya G</li>
+        </ul>
+    </div>
+</body>
+</html>
