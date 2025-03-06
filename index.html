@@ -448,12 +448,13 @@ opacity: 0.8;
             padding-left: 20px;
         }
 
-        /* Map iframe styling */
-/*         .map-container {
+       /* Map iframe styling */
+       .map-container {
             width: 600px;
             height: 450px;
-            border: 2px solid #ddd; /* Optional border around the map */
-        } */
+/*             border: 2px solid #ddd; /* Optional border around the map */ */
+        }
+    
 
         /* Mobile Responsiveness: Stacks map and footer text vertically */
         @media (max-width: 768px) {
@@ -468,6 +469,13 @@ opacity: 0.8;
                 margin-bottom: 20px; /* Add margin between text and map */
             }
 
+        /* Mobile Responsiveness: Adjust size for phone view */
+        @media (max-width: 768px) {
+            .map-container {
+                width: 100%; /* Make the map full width on smaller screens */
+                height: 300px; /* Adjust the height for mobile view */
+            }
+        }
             .map-container {
                 width: 50%; /* Full width for the map */
                 height: 150px; /* Adjust map height for small screens */
