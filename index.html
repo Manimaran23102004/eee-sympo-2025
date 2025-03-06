@@ -428,7 +428,12 @@ transition: opacity 0.3s ease-in-out;
 opacity: 0.8;
 }
 
-    .footer-container {
+    .content {
+            flex-grow: 1;
+        }
+
+        /* Footer container with flexbox */
+        .footer-container {
             display: flex;
             justify-content: space-between;  /* Space between left and right side */
             align-items: center;
@@ -437,8 +442,7 @@ opacity: 0.8;
             padding: 20px;
             width: 100%;
             backdrop-filter: blur(10px); /* Apply blur effect */
-            position: absolute;
-            bottom: 0;
+            position: relative;
         }
 
         /* Footer text on the left */
