@@ -426,6 +426,72 @@ transition: opacity 0.3s ease-in-out;
 /* Fade-in Effect on Hover */
 .card video:hover {
 opacity: 0.8;
+
+  /* Main content area to push the footer to the bottom */
+  .content {
+            flex-grow: 1;
+        }
+
+        /* Footer container with flexbox */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;  /* Space between left and right side */
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            width: 100%;
+            backdrop-filter: blur(10px); /* Apply blur effect */
+            position: relative;
+        }
+
+        /* Footer text on the left */
+        .footer-text {
+            flex: 1; /* Take up all available space on the left */
+            text-align: left;
+            padding-left: 20px;
+        }
+
+       /* Map iframe styling */
+       .map-container {
+            width: 600px;
+            height: 450px;
+            /* border: 2px solid #ddd;  */
+        }
+    
+
+        /* Mobile Responsiveness: Stacks map and footer text vertically */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start; /* Align text and map to the left on smaller screens */
+            }
+
+            .footer-text {
+                text-align: left;
+                padding-left: 0; /* Remove left padding on small screens */
+                margin-bottom: 20px; /* Add margin between text and map */
+            }
+
+        /* Mobile Responsiveness: Adjust size for phone view */
+        @media (max-width: 768px) {
+            .map-container {
+                width: 100%; /* Make the map full width on smaller screens */
+                height: 300px; /* Adjust the height for mobile view */
+            }
+        }
+            .map-container {
+                width: 50%; /* Full width for the map */
+                height: 150px; /* Adjust map height for small screens */
+            }
+        }
+
+        /* Mobile Responsiveness: Stacks map and footer text for very small screens */
+        @media (max-width: 480px) {
+            .map-container {
+                height: 150px; /* Further reduce map height on smaller screens */
+            }
+        }
 }
 
 </style>
@@ -564,8 +630,30 @@ opacity: 0.8;
             <li class="list-group-item">👨‍🎓 Dhanush Kumar C</li>
             <li class="list-group-item">👨‍🎓 Pavithraa M</li>
             <li class="list-group-item">👨‍🎓 Avishkar M S</li>
+            <li class="list-group-item">👨‍🎓 Yuvan M</li>
+            <li class="list-group-item">👨‍🎓 Aishwarya P</li>
             <li class="list-group-item">👨‍🎓 Priya G</li>
         </ul>
+    </div>
+
+
+    <div class="footer-container">
+        <!-- Footer text on the left side -->
+       
+       
+        <!-- <div class="footer-text">
+            <p>PSNA College of Engineering and Technology,</p>
+            <p>Kothandaraman Nagar,</p>
+            <p>Dindigul-624622,</p>
+            <p>Tamilnadu,</p>
+            <p>India.</p>
+        </div> -->
+
+        
+        <!-- Map iframe on the right side -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0651225299043!2d77.89805427408282!3d10.416402665733182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9ffb95456ce7f%3A0x14d566dfc1364080!2sPSNA%20College%20Of%20Engineering%20And%20Technology!5e0!3m2!1sen!2sin!4v1741239139583!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
 </body>
 </html>
