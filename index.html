@@ -428,7 +428,8 @@ transition: opacity 0.3s ease-in-out;
 opacity: 0.8;
 }
 
-    .content {
+  /* Main content area to push the footer to the bottom */
+        .content {
             flex-grow: 1;
         }
 
@@ -458,6 +459,33 @@ opacity: 0.8;
             height: 450px;
             border: 2px solid #ddd; /* Optional border around the map */
         }
+
+        /* Mobile Responsiveness: Stacks map and footer text vertically */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start; /* Align text and map to the left on smaller screens */
+            }
+
+            .footer-text {
+                text-align: left;
+                padding-left: 0; /* Remove left padding on small screens */
+                margin-bottom: 20px; /* Add margin between text and map */
+            }
+
+            .map-container {
+                width: 100%; /* Full width for the map */
+                height: 300px; /* Adjust map height for small screens */
+            }
+        }
+
+        /* Mobile Responsiveness: Stacks map and footer text for very small screens */
+        @media (max-width: 480px) {
+            .map-container {
+                height: 250px; /* Further reduce map height on smaller screens */
+            }
+        }
+
 </style>
 <body>
    
@@ -594,9 +622,9 @@ opacity: 0.8;
             <li class="list-group-item">👨‍🎓 Dhanush Kumar C</li>
             <li class="list-group-item">👨‍🎓 Pavithraa M</li>
             <li class="list-group-item">👨‍🎓 Avishkar M S</li>
-            <li class="list-group-item">👨‍🎓 Priya G</li>
             <li class="list-group-item">👨‍🎓 Yuvan M</li>
             <li class="list-group-item">👨‍🎓 Aishwarya P</li>
+            <li class="list-group-item">👨‍🎓 Priya G</li>
         </ul>
     </div>
 
