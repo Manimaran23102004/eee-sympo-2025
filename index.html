@@ -296,11 +296,6 @@ margin-right: 15px;
 }
 
 
-
-
-
-
-
 .event-logo {
 max-width: 250px;
 display: block;
@@ -494,6 +489,72 @@ opacity: 0.8;
         }
 }
 
+  /* Main content area to push the footer to the bottom */
+        .content {
+            flex-grow: 1;
+        }
+
+        /* Footer container with flexbox */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;  /* Space between left and right side */
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            width: 100%;
+            backdrop-filter: blur(10px); /* Apply blur effect */
+            position: relative;
+        }
+
+        /* Footer text on the left */
+        .footer-text {
+            flex: 1; /* Take up all available space on the left */
+            text-align: left;
+            padding-left: 20px;
+        }
+
+       /* Map iframe styling */
+       .map-container {
+            width: 600px;
+            height: 450px;
+/*             border: 2px solid #ddd; /* Optional border around the map */ */
+        }
+    
+
+        /* Mobile Responsiveness: Stacks map and footer text vertically */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start; /* Align text and map to the left on smaller screens */
+            }
+
+            .footer-text {
+                text-align: left;
+                padding-left: 0; /* Remove left padding on small screens */
+                margin-bottom: 20px; /* Add margin between text and map */
+            }
+
+        /* Mobile Responsiveness: Adjust size for phone view */
+        @media (max-width: 768px) {
+            .map-container {
+                width: 100%; /* Make the map full width on smaller screens */
+                height: 300px; /* Adjust the height for mobile view */
+            }
+        }
+            .map-container {
+                width: 50%; /* Full width for the map */
+                height: 150px; /* Adjust map height for small screens */
+            }
+        }
+
+        /* Mobile Responsiveness: Stacks map and footer text for very small screens */
+        @media (max-width: 480px) {
+            .map-container {
+                height: 150px; /* Further reduce map height on smaller screens */
+            }
+        }
+
 </style>
 <body>
    
@@ -506,7 +567,7 @@ opacity: 0.8;
             </a>
         </div>
     </nav>
-
+    
     <div class="container text-center mt-5">
         <h1 class="display-4 fw-bold">PSNA College of Engineering and Technology</h1>
         <p class="lead mt-4 mb-4"><strong>Department of Electrical and Electronics Engineering</strong></p>
@@ -526,8 +587,8 @@ opacity: 0.8;
         <div class="exciting-box">
             <ul class="list-group exciting-list">
                 <li class="list-group-item">🏆 Exciting Cash Prizes</li>
-                <li class="list-group-item">📜 Participation Certificates Provided</li>
-                <li class="list-group-item">🍽 Refreshments and Lunch Included</li>
+                <li class="list-group-item">📜 Participation Certificates</li>
+                <li class="list-group-item">🍽 Refreshments and Lunch</li>
             </ul>
         </div>
     </div>
@@ -636,20 +697,32 @@ opacity: 0.8;
         </ul>
     </div>
 
+<<<<<<< HEAD
 
     <div class="footer-container">
         <!-- Footer text on the left side -->
        
        
         <!-- <div class="footer-text">
+=======
+    <!-- Footer container with text on the left -->
+  <div class="footer-container">
+        <!-- Footer text on the left side -->
+        <div class="footer-text">
+>>>>>>> 25cb0b8b14814c20f21abbae548f5252b385aa0e
             <p>PSNA College of Engineering and Technology,</p>
             <p>Kothandaraman Nagar,</p>
             <p>Dindigul-624622,</p>
             <p>Tamilnadu,</p>
             <p>India.</p>
+<<<<<<< HEAD
         </div> -->
 
         
+=======
+        </div>
+
+>>>>>>> 25cb0b8b14814c20f21abbae548f5252b385aa0e
         <!-- Map iframe on the right side -->
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0651225299043!2d77.89805427408282!3d10.416402665733182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9ffb95456ce7f%3A0x14d566dfc1364080!2sPSNA%20College%20Of%20Engineering%20And%20Technology!5e0!3m2!1sen!2sin!4v1741239139583!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
