@@ -7,7 +7,350 @@
     <link rel="icon" href="./img/psna-icon.jpeg">
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
+<style>
+    /* Background */
+body {
+    background: #0b0e14;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* Event Poster */
+.event-poster img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.event-poster img:hover {
+    transform: scale(1.05);
+}
+
+/* Event Details */
+.event-details {
+    text-align: left;
+    padding: 20px;
+}
+
+/* Event Title */
+.event-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #009dff;
+}
+
+/* Event Description */
+.event-description {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+/* Event Info Section */
+.event-info {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Info Box */
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Icons */
+.info-box i {
+    font-size: 1.5rem;
+    color: #009dff;
+}
+
+/* Info Titles */
+.info-title {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #00d2ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-details {
+        text-align: center;
+        padding-top: 20px;
+    }
+    .event-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+</style>
+<style>
+    /* Background Styling */
+body {
+    background: #0b0e14;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* Info Card Styling */
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.info-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Card Title */
+.info-card .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Icons */
+.icon {
+    font-size: 2rem;
+    color: #009dff;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    display: inline-block;
+}
+
+/* Text Styling */
+.info-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+</style>
+<style>
+    /* Background Styling */
+body {
+    background: linear-gradient(135deg, #0a1f44, #001f3f, #005c97);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* Glassmorphism Effect for the Cards */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Stronger Blur */
+    border-radius: 20px; /* More Rounded Borders */
+    box-shadow: 0px 4px 20px rgba(0, 123, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Card Hover Effect */
+.glass-effect:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 6px 30px rgba(0, 123, 255, 0.5);
+}
+
+/* Card Title with Blue Gradient */
+.official-card .card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* List Group */
+.list-group {
+    background: transparent;
+}
+
+/* List Items (Names) - Removed Background Blur */
+.list-group-item {
+    background: transparent; /* No background blur */
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 12px;
+}
+
+/* List Item Hover Effect */
+.list-group-item:hover {
+    transform: scale(1.05);
+    color: #00d2ff;
+}
+
+/* Glowing Border Animation */
+.glass-effect::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+/* Activate Glow on Hover */
+.glass-effect:hover::before {
+    opacity: 0.7;
+}
+
+</style>
+<style>
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background: linear-gradient(135deg, #0f172a, #1e293b); /* Dark modern gradient */
+    color: white;
+}
+
+/* Countdown Container */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Countdown Boxes */
+.countdown-box {
+    padding: 20px;
+    width: 100px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism Effect */
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Countdown Hover Effect */
+.countdown-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Label Styling */
+.label {
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: normal;
+    display: block;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Register Button */
+#register-btn {
+    margin-top: 40px;
+    padding: 12px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(221, 36, 118, 0.4);
+}
+
+#register-btn:hover {
+    transform: scale(1.1);
+}
+
+#register-btn:disabled {
+    background: gray;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+@media (max-width: 768px) {
+    .countdown-container {
+        gap: 8px; /* Reduce gap for smaller screens */
+        justify-content: space-evenly; /* Keeps alignment in one line */
+        flex-wrap: nowrap; /* Ensures a horizontal line */
+    }
+
+    .countdown-box {
+        min-width: 65px; /* Smaller boxes for mobile */
+        font-size: 20px; /* Adjusted font size */
+        padding: 10px;
+    }
+
+    #register-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-container {
+        overflow-x: auto; /* Allows scrolling if needed */
+        justify-content: flex-start; /* Keeps alignment proper */
+    }
+
+    .countdown-box {
+        min-width: 60px;
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    #register-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+
+</style>
 <style>
     /* Importing Custom Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@300;500;700&display=swap');
@@ -631,8 +974,85 @@ opacity: 0.8;
         <h1 class="display-4 fw-bold">PSNA College of Engineering and Technology</h1>
         <p class="lead mt-4 mb-4"><strong>Department of Electrical and Electronics Engineering</strong></p>
         <h1 class="power-gale-heading event-year">POWER GALE <br>2K25</h1>
-        <!-- <h2 class="">2K25</h2> -->
-        <h4 class="text-danger">9th April 2025</h4>
+
+
+
+        <div class="container mt-5">
+            <div class="row align-items-center">
+                <!-- Event Poster -->
+                <div class="col-md-6">
+                    <div class="event-poster">
+                        <img src="./img/TechMeraki Invitation.png" alt="Power Gale" class="img-fluid rounded">
+                    </div>
+                </div>
+        
+                <!-- Event Details -->
+                <div class="col-md-6">
+                    <div class="event-details">
+                        <h2 class="event-title">About <span class="highlight">Power Gale'25</span></h2>
+                        <p class="event-description">
+                            Welcome to <strong>Power Gale</strong>, a state-level symposium organized by the 
+                            Department of Electrical and Electronics Engineering, PSNA College of Engineering and 
+                            Technology. This event is all about <strong>innovation, creativity, and teamwork.</strong>
+                        </p>
+                        <p class="event-description">
+                            Join the brightest minds from different colleges as they compete, create, and collaborate 
+                            in exciting <strong>technical competitions</strong> and inspiring 
+                            guest talks. <strong>Power Gale</strong> is more than just a symposium—it's a chance to learn, 
+                            explore new ideas, and make an impact!
+                        </p>
+        
+                        <!-- Event Info (Date & Venue) -->
+                        <div class="event-info">
+                            <div class="info-box">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <span class="info-title">Date</span>
+                                    <span>April 09, 2025</span>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="info-title">Venue</span>
+                                    <span>SRL Auditorium, PSNACET</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+
+
+
+
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span id="days">00</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="countdown-box">
+                <span id="hours">00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="countdown-box">
+                <span id="minutes">00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="countdown-box">
+                <span id="seconds">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+        
+        <button id="register-btn">Register</button>
+        
     </div>
 
     <div class="container text-center mt-4">
@@ -641,21 +1061,14 @@ opacity: 0.8;
         <a href="brochure.pdf" class="btn btn-success mt-2">View Brochure</a>
     </div>
 
-    <div class="container mt-4">
-        <h2 class="text-center exciting-title">🌟 Discover Our Exciting New Arrivals! 🌟</h2>
-        <div class="exciting-box">
-            <ul class="list-group exciting-list">
-                <li class="list-group-item">🏆 Exciting Cash Prizes</li>
-                <li class="list-group-item">📜 Participation Certificates</li>
-                <li class="list-group-item">🍽 Refreshments and Lunch</li>
-            </ul>
-        </div>
-    </div>
+  
 
     <div class="container mt-5">
-        <h2 class="text-center text-primary">🚀 Technical Events 🚀</h2>
+      <b>  <h2 class="text-center text-black">Our Technical Events </h2></b>
+    
         <div class="row justify-content-center">
-            <div class="col-md-4 mb-4">
+            <!-- Row 1 -->
+            <div class="col-md-4 mb-4" data-aos="flip-left">
                 <a href="task1.html" class="event-card-link">
                     <div class="card event-card">
                         <video class="card-img-top" autoplay loop muted playsinline preload="auto">
@@ -667,7 +1080,8 @@ opacity: 0.8;
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 mb-4">
+    
+            <div class="col-md-4 mb-4" data-aos="flip-right">
                 <a href="task2.html" class="event-card-link">
                     <div class="card event-card">
                         <video class="card-img-top" autoplay loop muted playsinline preload="auto">
@@ -679,7 +1093,8 @@ opacity: 0.8;
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 mb-4">
+    
+            <div class="col-md-4 mb-4" data-aos="flip-left">
                 <a href="task3.html" class="event-card-link">
                     <div class="card event-card">
                         <video class="card-img-top" autoplay loop muted playsinline preload="auto">
@@ -691,7 +1106,11 @@ opacity: 0.8;
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 mb-4">
+        </div>
+    
+        <div class="row justify-content-center">
+            <!-- Row 2 -->
+            <div class="col-md-4 mb-4" data-aos="flip-right">
                 <a href="task4.html" class="event-card-link">
                     <div class="card event-card">
                         <video class="card-img-top" autoplay loop muted playsinline preload="auto">
@@ -703,7 +1122,8 @@ opacity: 0.8;
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 mb-4">
+    
+            <div class="col-md-4 mb-4" data-aos="flip-left">
                 <a href="task5.html" class="event-card-link">
                     <div class="card event-card">
                         <img class="card-img-top" src="./img/coding1.png" alt="">
@@ -713,7 +1133,8 @@ opacity: 0.8;
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 mb-4">
+    
+            <div class="col-md-4 mb-4" data-aos="flip-right">
                 <a href="task6.html" class="event-card-link">
                     <div class="card event-card">
                         <video class="card-img-top" autoplay loop muted playsinline preload="auto">
@@ -728,61 +1149,307 @@ opacity: 0.8;
         </div>
     </div>
 
-    <div class="container mt-5">
-        <h2 class="text-center section-title">🏛 College Officials</h2>
-        <ul class="list-group info-list">
-            <li class="list-group-item">👨‍🏫 Name 1</li>
-            <li class="list-group-item">👨‍🏫 Name 2</li>
-        </ul>
-    </div>
+
 
     <div class="container mt-5">
-        <h2 class="text-center section-title">🧑‍🏫 Staff Incharge</h2>
-        <ul class="list-group info-list">
-            <li class="list-group-item">👩‍🏫 Dr. I. Gerald Christopher Raj</li>
-            <li class="list-group-item">👩‍🏫 Mr. B. Pushpavanam</li>
-        </ul>
-    </div>
-
-    <div class="container mt-5 mb-5">
-        <h2 class="text-center section-title">🎓 Student Incharge</h2>
-        <ul class="list-group info-list">
-            <li class="list-group-item">👨‍🎓 Dhanush Kumar C</li>
-            <li class="list-group-item">👨‍🎓 Pavithraa M</li>
-            <li class="list-group-item">👨‍🎓 Avishkar M S</li>
-            <li class="list-group-item">👨‍🎓 Yuvan M</li>
-            <li class="list-group-item">👨‍🎓 Aishwarya P</li>
-            <li class="list-group-item">👨‍🎓 Priya G</li>
-        </ul>
-    </div>
-
-
-
-    <div class="footer-container">
-        <!-- Footer text on the left side -->
-       
-       
-         <div class="footer-text">
-
-    <!-- Footer container with text on the left -->
-  <div class="footer-container">
-        <!-- Footer text on the left side -->
-        <!-- <div class="footer-text">
-            <p>PSNA College of Engineering and Technology,</p>
-            <p>Kothandaraman Nagar,</p>
-            <p>Dindigul-624622,</p>
-            <p>Tamilnadu,</p>
-            <p>India.</p>
-
-        </div>  -->
-
-        
-
+        <div class="row justify-content-center">
+            <!-- Row 1 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-id-badge"></i></div>
+                    <h4 class="card-title">College ID</h4>
+                    <p>Participants must carry their college ID card for verification.</p>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <h4 class="card-title">Punctuality</h4>
+                    <p>All events will commence at the scheduled time. Participants must be punctual.</p>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                    <h4 class="card-title">Reporting Time</h4>
+                    <p>All participants must report by 8:45 AM on March 20, 2025.</p>
+                </div>
+            </div>
+    
+            <!-- Row 2 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-tags"></i></div>
+                    <h4 class="card-title">Event Tags</h4>
+                    <p>Participants must collect their event tags from the registration desk before their event.</p>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-gavel"></i></div>
+                    <h4 class="card-title">Jury's Decision</h4>
+                    <p>The jury's decision will be final and binding in all matters.</p>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-tshirt"></i></div>
+                    <h4 class="card-title">Dress Code</h4>
+                    <p>Formal wear is mandatory for all participants.</p>
+                </div>
+            </div>
+    
+            <!-- Row 3 -->
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-exclamation-circle"></i></div>
+                    <h4 class="card-title">Code of Conduct</h4>
+                    <p>The use of any prohibited substances is strictly banned within the premises.</p>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-award"></i></div>
+                    <h4 class="card-title">Awards & Certificates</h4>
+                    <p>Exciting prizes and participation certificates will be given to attendees.</p>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="icon"><i class="fas fa-utensils"></i></div>
+                    <h4 class="card-title">Lunch & Refreshments</h4>
+                    <p>Lunch and refreshments will be provided to all registered participants.</p>
+                </div>
+            </div>
         </div>
-        <!-- Map iframe on the right side -->
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0651225299043!2d77.89805427408282!3d10.416402665733182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9ffb95456ce7f%3A0x14d566dfc1364080!2sPSNA%20College%20Of%20Engineering%20And%20Technology!5e0!3m2!1sen!2sin!4v1741239139583!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+
+
+
+<style>
+
+/* Footer Styling */
+.footer {
+    background: #0b0e14;
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    bottom: 0;
+    left: 0;
+}
+
+/* Footer Links Container */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* Reduced spacing for better alignment */
+}
+
+/* Footer Items */
+.footer-item {
+    text-align: center;
+    margin-bottom: 5px; /* Reduced extra spacing */
+}
+
+/* Footer Links */
+.footer-link {
+    color: white;
+    font-size: 1rem; /* Standard size */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduced space between icon and text */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.footer-link:hover {
+    color: #009dff;
+}
+
+/* Icons */
+.footer-link i {
+    font-size: 1.2rem; /* Properly sized */
+    color: #009dff;
+}
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    max-width: 350px; /* Compact size */
+    margin: 5px auto; /* Balanced space */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Responsive Iframe */
+.map-container iframe {
+    width: 100%;
+    height: 160px; /* Adjusted for balance */
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Coordinators Section */
+.coordinators {
+    text-align: center; /* Centered alignment */
+    padding-left: 0;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #009dff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links {
+        text-align: center;
+    }
+    .map-container {
+        max-width: 90%;
+    }
+    .map-container iframe {
+        height: 140px; /* Smaller for mobile */
+    }
+}
+
+
+</style>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Left Section: Social Media & Contact -->
+            <div class="col-md-6 text-center">
+                <div class="footer-links">
+                    <!-- Email -->
+                    <div class="footer-item">
+                        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSDZcwbDBZXfmTscCbzPztfrbrWmmbkkMwgJxHLWLSKfZGsWMkrTBrWkCXfwWMGChDvfXLCQ" 
+                           target="_blank" class="footer-link">
+                            <i class="fas fa-envelope"></i> Contact on Mail
+                        </a>
+                    </div>
+            
+                    <!-- Google Map -->
+                    <div class="footer-item">
+                        <div class="map-container">
+                            <a href="https://goo.gl/maps/sK1W8DxP9PzT5X5r6" target="_blank">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0728649393736!2d77.89789722508368!3d10.415787689711928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9ffb95456ce7f%3A0x14d566dfc1364080!2sPSNA%20College%20Of%20Engineering%20And%20Technology!5e0!3m2!1sen!2sin!4v1741874785696!5m2!1sen!2sin" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </a>
+                        </div>
+                    </div>
+            
+                    <!-- LinkedIn -->
+                    <div class="footer-item">
+                        <a href="https://www.linkedin.com/in/psna-eee-dindigul-7158b21a1/" target="_blank" class="footer-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+            
+                    <!-- Instagram -->
+                    <div class="footer-item">
+                        <a href="https://www.instagram.com/psnacetofficial/" target="_blank" class="footer-link">
+                            <i class="fab fa-instagram"></i> Follow on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Right Section: Coordinators -->
+            <div class="col-md-6 text-center text-md-start">
+                <div class="coordinators">
+
+
+                    <h4 class="highlight">Staff Coordinator</h4>
+                    <p>Dr. I. Gerald Christopher Raj<br> EEE <br>
+                    <p>Mr. B. Pushpavanam<br> EEE <br>
+
+
+
+                    <h4 class="highlight">Event Coordinator</h4>
+                    <p>Dhanush Kumar C<br> IV Year EEE <br> <i class="fas fa-phone"></i> +91 11111111</p>
+                    <p>Pavithraa M<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
+                    <p>Avishkar M S<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
+                    <p>Yuvan M<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
+                    <p>Aishwarya P<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
+                    <p>Priya G<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
+
+
+
+
+
+
+                   
+                </div>
+            </div>
         </div>
     </div>
+</footer>
+
+    
+
+
+    <script>
+        function updateCountdown() {
+    const targetDate = new Date('April 9, 2025 00:00:00').getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+    const registerButton = document.getElementById("register-btn");
+
+    if (difference <= 0) {
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+        registerButton.innerHTML = "Registration Closed";
+        registerButton.disabled = true;
+        clearInterval(interval);
+        return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+}
+
+updateCountdown(); // Initial call
+const interval = setInterval(updateCountdown, 1000);
+
+    </script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Animation runs only once
+            offset: 100, // Trigger animation 100px before it enters the viewport
+        });
+    </script>
 </body>
 </html>
