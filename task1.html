@@ -450,83 +450,172 @@
      }
 
 </style>
+<style>
+  /* Back Button */
+.back-btn {
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(45deg, #3774de, #24829c);
+    color: white;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.6);
+}
+.back-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Task Container */
+.task1-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.event-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Registration Button */
+.register-btn {
+    background: linear-gradient(45deg, #61afc5, #47607e);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 114, 255, 0.6);
+    text-transform: uppercase;
+    
+}
+.register-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 20px rgba(0, 114, 255, 0.8);
+}
+
+/* Contact Box */
+.contact-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.contact-box ul {
+    font-size: 1.2rem;
+    color: white;
+    padding-left: 0;
+}
+.contact-box ul li {
+    margin-bottom: 10px;
+}
+
+/* About Event Section */
+.about-event {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.about-event h4 {
+    color: #000000;
+    font-size: 1.8rem;
+    /* text-shadow: 0px 0px 10px rgba(0, 179, 255, 0.8); */
+}
+.about-event p, .about-event ul {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-image {
+        width: 100%;
+    }
+    .register-btn {
+        font-size: 1.2rem;
+    }
+    .contact-box ul {
+        font-size: 1rem;
+    }
+}
+
+</style>
 <body>
     <div class="live-background"></div>
     
     <div class="header-container text-center">
-
-
        <br/> <h1 class="paper-vista-heading"><strong>PAPER VISTA</strong></h1>
         <hr>
     </div>
 
     <div class="container mt-5">
-        <div class="container">
-            <a href="index.html" class="btn" style="
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                background: linear-gradient(45deg, #3774de, #24829c);
-                color: white;
-                padding: 8px 16px;
-                font-size: 1rem;
-                border-radius: 5px;
-                text-transform: uppercase;
-                font-weight: bold;
-                transition: all 0.3s ease-in-out;
-                box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.6);"
-                onmouseover="this.style.transform='scale(1.1)'"
-                onmouseout="this.style.transform='scale(1)'"><strong>⬅ Back</strong>
-            </a>
-        </div>
-    <div class="task1-container">
-        
-            <div class="row align-items-center p-1 rounded shadow text-white">
-                <!-- Left side - Image -->
-                <div class="col-md-6 text-center">
-                    <img src="./img/2.jpg" alt="Paper Vista" class="img-fluid rounded shadow">
-                </div>
+      <div class="container">
+          <a href="index.html" class="btn back-btn"><strong>⬅ Back</strong></a>
+      </div>
 
-                <!-- Right side - Event details -->
-                <div class="col-md-6">
-                    <h3><strong>Date :</strong> 9th April 2025</h3>
-                    <h3><strong>Time :</strong> 11:00 AM - 12:00 PM</h3>
-                    <h3><strong>Venue :</strong> Smart Class 1st Floor</h3>
-                    <h2>Registration Fee : ₹250+GST per head</h2>
-                    <h3>(Including Lunch)</h3>
-                    <div class="mt-4 text-center text-md-start">
-                        <a href="register.html" class="btn register-btn btn-lg px-4 fw-bold" style="
-                            background: linear-gradient(45deg, #00c6ff, #0072ff);
-                            color: white;
-                            border: none;
-                            padding: 12px 24px;
-                            font-size: 1.5rem;
-                            border-radius: 10px;
-                            transition: all 0.3s ease-in-out;
-                            box-shadow: 0px 4px 15px rgba(0, 114, 255, 0.6);
-                            text-transform: uppercase;"
-                            onmouseover="this.style.transform='scale(1.1)'"
-                            onmouseout="this.style.transform='scale(1)'"><strong>Register Now</strong>
-                        </a>
-                    </div>
+      <div class="task1-container p-4 rounded">
+          <div class="row align-items-center p-3 rounded shadow text-white">
+              <!-- Left Side - Event Details -->
+              <div class="col-md-6 order-md-2 text-center">
+                  <img src="./img/2.jpg" alt="Paper Vista" class="event-image img-fluid rounded shadow">
+              </div>
 
-                    <div class="mt-5 p-4 rounded" style="
-                        background: rgba(255, 255, 255, 0.1);
-                        backdrop-filter: blur(10px);
-                        border-radius: 10px;
-                        border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <h4 class="fw-bold mb-3 text-info" style="font-size: 1.8rem;">For More Details</h4>
-                        <ul class="list-unstyled">
-                            <li class="fs-5 mb-2" style="font-size: 1.3rem;"><strong>Arun I :</strong> +91 1234567899</li>
-                            <li class="fs-5" style="font-size: 1.3rem;"><strong>Alan Durai T :</strong> +91 1234567899</li>
-                            <li class="fs-5 mb-2" style="font-size: 1.3rem;"><strong>Arun V G :</strong> +91 1234567899</li>
-                            <li class="fs-5" style="font-size: 1.3rem;"><strong>Priya Dharshini :</strong> +91 1234567899</li>
-                        </ul>
-                    </div>
-            
-                </div>
-            </div>
-        </div>
-    </div>
+              <!-- Right Side - Details & Registration -->
+              <div class="col-md-6 order-md-1">
+                <br>
+                  <h3><strong>Date :</strong> 9th April 2025</h3>
+                  <h3><strong>Time :</strong> 11:00 AM - 12:00 PM</h3>
+                  <h3><strong>Venue :</strong> Smart Class 1st Floor</h3>
+                  <h2>Registration Fee : ₹250+GST per head</h2>
+                  <h3>(Including Lunch)</h3><br>
+
+                  <div class="mt-4 text-center text-md-start">
+                      <a href="register.html" class="btn register-btn"><strong>Register Now</strong></a>
+                  </div>
+
+                  <div class="contact-box mt-4">
+                      <h4 class="fw-bold mb-3 text-info text-black">For More Details</h4>
+                      <ul class="list-unstyled">
+                          <li><strong>Arun I :</strong> +91 1234567899</li>
+                          <li><strong>Alan Durai T :</strong> +91 1234567899</li>
+                          <li><strong>Arun V G :</strong> +91 1234567899</li>
+                          <li><strong>Priya Dharshini :</strong> +91 1234567899</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <!-- About the Event Below Image -->
+          <div class="about-event mt-5">
+              <h4><strong>About The Event:</strong></h4>
+              <p>
+                  This competition requires teams of up to three participants. Teams must prepare a PowerPoint presentation, saved on a pendrive in both *.docx* and *.ppt* formats. The abstract and presentation must be emailed in advance.
+                  Each team has a strict time limit of *5 minutes* for their presentation, which should not exceed *5 slides*.
+              </p>
+              <h4><strong>Rules:</strong></h4>
+              <ul>
+                  <li>Each team should consist of a maximum of three participants.</li>
+                  <li>Kindly bring your PowerPoint presentation on a pendrive, with soft copies in .docx and .ppt formats.</li>
+                  <li>Each team has a maximum of 10 minutes for their presentation.</li>
+                  <li>Limit your presentation to a maximum of 7 slides.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
 </body>
 </html>
