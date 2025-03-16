@@ -14,6 +14,9 @@
 </head>
 <style>
     /* Background */
+    html {
+    scroll-behavior: smooth;
+}
 body {
     background: #0b0e14;
     font-family: 'Poppins', sans-serif;
@@ -155,34 +158,37 @@ body {
 
 </style>
 <style>
-    /* Background Styling */
+    /* 🔹 Background Styling */
 body {
     background: linear-gradient(135deg, #0a1f44, #001f3f, #005c97);
     font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
-/* Glassmorphism Effect for the Cards */
+/* 🔹 Glassmorphism Effect for the Cards */
 .glass-effect {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px); /* Stronger Blur */
+    backdrop-filter: blur(12px); /* Stronger Blur */
     border-radius: 20px; /* More Rounded Borders */
     box-shadow: 0px 4px 20px rgba(0, 123, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    overflow: hidden;
 }
 
-/* Card Hover Effect */
+/* 🔹 Card Hover Effect */
 .glass-effect:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 6px 30px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 30px rgba(0, 123, 255, 0.4);
 }
 
-/* Card Title with Blue Gradient */
+/* 🔹 Card Title with Blue Gradient */
 .official-card .card-title {
     font-size: 1.8rem;
     font-weight: bold;
@@ -192,38 +198,36 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-/* List Group */
+/* 🔹 List Group */
 .list-group {
     background: transparent;
+    padding: 0;
 }
 
-/* List Items (Names) - Removed Background Blur */
+/* 🔹 List Items (Names) */
 .list-group-item {
-    background: transparent; /* No background blur */
+    background: transparent; /* No background */
     border: none;
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease, color 0.2s ease;
     border-radius: 5px;
     margin-bottom: 8px;
     padding: 12px;
 }
 
-/* List Item Hover Effect */
+/* 🔹 List Item Hover Effect */
 .list-group-item:hover {
     transform: scale(1.05);
     color: #00d2ff;
 }
 
-/* Glowing Border Animation */
+/* 🔹 Glowing Border Animation */
 .glass-effect::before {
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    inset: -2px; /* Shorter way to set top, left, right, bottom */
     background: linear-gradient(45deg, #00d2ff, #3a7bd5);
     filter: blur(10px);
     opacity: 0;
@@ -232,9 +236,24 @@ body {
     z-index: -1;
 }
 
-/* Activate Glow on Hover */
+/* 🔹 Activate Glow on Hover */
 .glass-effect:hover::before {
     opacity: 0.7;
+}
+
+/* 🔹 Responsive Fixes */
+@media (max-width: 768px) {
+    .glass-effect {
+        padding: 15px;
+    }
+
+    .official-card .card-title {
+        font-size: 1.5rem;
+    }
+
+    .list-group-item {
+        font-size: 1rem;
+    }
 }
 
 </style>
@@ -961,22 +980,202 @@ opacity: 0.8;
 <body>
    
     <div class="live-background"></div>
+    <style>
+        /* 🔹 Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@300;500;700&display=swap');
+
+/* 🔹 General Styling */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* 🔹 Smooth Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* 🔹 Background Video Section */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* 🔹 Glowing Hero Title */
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffffff, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 20px rgba(0, 204, 255, 0.8);
+    animation: glow 2s infinite alternate ease-in-out;
+    margin-top: 200px; /* Adjust the positioning over the video */
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 15px rgba(0, 204, 255, 0.6); }
+    100% { text-shadow: 0 0 40px rgba(0, 204, 255, 1); }
+}
+
+/* 🔹 Glassmorphism Event Cards */
+.event-card {
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* 🔹 Hover Effect */
+.event-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 10px 30px rgba(0, 255, 255, 0.5);
+}
+
+/* 🔹 3D Buttons */
+.btn-custom {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 1.5rem;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 15px rgba(255, 75, 43, 0.6);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+/* 🔹 Button Hover Effect */
+.btn-custom:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 25px rgba(255, 75, 43, 0.8);
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+        margin-top: 150px;
+    }
+
+    .btn-custom {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .event-card {
+        padding: 15px;
+    }
+}
+
+    </style>
+    <div class="video-container">
+        <video autoplay loop muted class="background-video">
+            <source src="./img/11.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <style>
+        /* Blur effect for navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            transition: 0.3s ease-in-out;
+        }
     
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="./index.html">
-                <img src="./img/psna-logo-name.png" alt="PSNA LOGO" class="logo">
-            </a>
+        /* Navbar hover effect */
+        .navbar:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+    
+        /* Navbar link styles */
+        .nav-link {
+            font-size: 18px;
+            color: white !important;
+            transition: 0.3s;
+        }
+    
+        .nav-link:hover {
+            color: #30a1c6 !important; /* Highlight color */
+        }
+    </style>
+   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="./index.html">
+            <img src="./img/psna-logo-name.png" alt="PSNA LOGO" class="logo" height="50">
+        </a>
+
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#event">Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rules">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
     
-    <div class="container text-center mt-5">
+    <div class="container text-center mt-5"><br><br>
         <h1 class="display-4 fw-bold">PSNA College of Engineering and Technology</h1>
         <p class="lead mt-4 mb-4"><strong>Department of Electrical and Electronics Engineering</strong></p>
         <h1 class="power-gale-heading event-year">POWER GALE <br>2K25</h1>
 
 
-
+        <section id="about">
         <div class="container mt-5">
             <div class="row align-items-center">
                 <!-- Event Poster -->
@@ -987,6 +1186,7 @@ opacity: 0.8;
                 </div>
         
                 <!-- Event Details -->
+                
                 <div class="col-md-6">
                     <div class="event-details">
                         <h2 class="event-title">About <br> <span class="highlight">Power Gale'25</span></h2>
@@ -1019,10 +1219,8 @@ opacity: 0.8;
         </div>
         
 
-
-
-
-
+                 </section>
+              
 
 
 
@@ -1055,10 +1253,12 @@ opacity: 0.8;
         <a href="brochure.pdf" class="btn btn-success mt-2">View Brochure</a>
     </div>
 
-  
+  <section id="event">
+
+
 
     <div class="container mt-5">
-      <b>  <h2 class="text-center text-black">Our Technical Events </h2></b>
+      <b>  <h2 class="text-center text-white"><strong>Our Events</strong></h2></b>
     
         <div class="row justify-content-center">
             <!-- Row 1 -->
@@ -1143,10 +1343,14 @@ opacity: 0.8;
         </div>
     </div>
 
+</section>
+
+<section id="rules">
 
 
     <div class="container mt-5">
         <div class="row justify-content-center">
+            <b>  <h2 class="text-center text-white"><strong>Guidelines & Rules</strong></h2></b>
             <!-- Row 1 -->
             <div class="col-md-4 mb-4" data-aos="fade-up">
                 <div class="info-card">
@@ -1211,7 +1415,7 @@ opacity: 0.8;
             </div>
         </div>
     </div>
-    
+</section>
 
 
 
@@ -1312,6 +1516,8 @@ opacity: 0.8;
 </style>
 
 
+<section id="contact">
+
 
 <footer class="footer">
     <div class="container">
@@ -1389,7 +1595,7 @@ opacity: 0.8;
         </div>
     </div>
 </footer>
-
+</section>
     
 
 
