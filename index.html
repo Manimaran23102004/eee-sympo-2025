@@ -119,50 +119,104 @@ html {
 }
 
 </style>
+<style>
+   /* 🔹 Glassmorphism Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent Black */
+    backdrop-filter: blur(12px); /* Glassmorphism Effect */
+    -webkit-backdrop-filter: blur(12px); /* Safari Support */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🔹 Navbar Hover Effect */
+.navbar:hover {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Navbar Brand (Logo) */
+.navbar-brand img {
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🔹 Logo Hover Effect */
+.navbar-brand:hover img {
+    transform: scale(1.1);
+}
+
+/* 🔹 Navbar Links */
+.nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: white !important;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+/* 🔹 Hover Effect with Gold Glow */
+.nav-link:hover {
+    color: #ffcc00 !important; /* Gold Hover Color */
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+/* 🔹 Active Link Effect */
+.nav-link.active {
+    color: #ffcc00 !important; /* Gold for Active Link */
+    text-shadow: 0 0 15px rgba(255, 204, 0, 1);
+}
+
+/* 🔹 Navbar Toggler (Mobile) */
+.navbar-toggler {
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🔹 Toggler Hover Effect */
+.navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 🔹 Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        backdrop-filter: blur(8px);
+    }
+    .nav-link {
+        font-size: 16px;
+    }
+}
+
+</style>
 
 <body>
    
     <div class="live-background"></div>
     <div class="video-container">
         <video autoplay loop muted playsinline class="background-video">
-            <source src="./img/3130284-uhd_2560_1440_30fps.mp4" type="video/mp4">
+            <source src="./img/5372266-uhd_3840_2160_30fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
    
-    <style>
-        /* Blur effect for navbar */
-        .navbar {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-            backdrop-filter: blur(10px); /* Blur effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
-            transition: 0.3s ease-in-out;
-        }
     
-        /* Navbar hover effect */
-        .navbar:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-    
-        /* Navbar link styles */
-        .nav-link {
-            font-size: 18px;
-            color: white !important;
-            transition: 0.3s;
-        }
-    
-        .nav-link:hover {
-            color: #30a1c6 !important; /* Highlight color */
-        }
-    </style>
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand" href="./index.html">
-            <img src="./img/psna-logo-name.png" alt="PSNA LOGO" class="logo" height="50">
+            <img src="./img/psna-logo-name.png" alt="PSNA LOGO">
         </a>
 
-        <!-- Navbar Toggler -->
+        <!-- Navbar Toggler (Mobile) -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -172,7 +226,7 @@ html {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
@@ -190,11 +244,15 @@ html {
         </div>
     </div>
 </nav>
+
     
     <div class="container text-center mt-5"><br><br>
-        <h1 class="display-4 fw-bold">PSNA College of Engineering and Technology</h1>
-        <p class="lead mt-4 mb-4"><strong>Department of Electrical and Electronics Engineering</strong></p>
-        <h1 class="power-gale-heading event-year">POWER GALE <br>2K25</h1>
+        <div class="container text-center mt-5">
+            <h1 class="college-name">PSNA College of Engineering and Technology</h1>
+            <p class="department-name mt-4 mb-4"><strong>Department of Electrical and Electronics Engineering</strong></p>
+            <h1 class="power-gale-heading event-year">POWER GALE <br>2K25</h1>
+        </div>
+        
 
 
         <section id="about">
@@ -216,21 +274,91 @@ html {
                            <strong>POWER GALE'25</strong> is a State level Technical Symposium organized by Department of Electrical and Electronics Engineering of PSNA College of Engineering and Technology, Dindigul. This prestigious event features a wide 
                             range of technical events, offering participants a unique opportunity to demonstrate their skills, creativity, and innovative capabilities. Join us to showcase your talents and compete with the best!    
                         </p>
-                       
+    <style>
+    /* 🔹 Event Info Container */
+.event-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Prevents wrapping on larger screens */
+}
+
+/* 🔹 Individual Info Box */
+.info-box {
+    display: flex;
+    align-items: center;
+    background: rgb(255, 255, 255); /* Solid Black Background */
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 220px;
+    max-width: 320px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🔹 Hover Effect */
+.info-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Icon Styling */
+.info-box i {
+    font-size: 1.8rem;
+    color: rgb(0, 0, 0);
+    margin-right: 12px;
+}
+
+/* 🔹 Info Text Styling */
+.info-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 🔹 Details Text */
+.info-box span:last-child {
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* 🔹 Responsive Design (Stack on Small Screens) */
+@media (max-width: 768px) {
+    .event-info {
+        flex-direction: column; /* Stacks on mobile */
+        align-items: center;
+    }
+
+    .info-box {
+        width: 90%;
+    }
+}
+
+    </style>
         
                         <!-- Event Info (Date & Venue) -->
                         <div class="event-info">
                             <div class="info-box">
                                 <i class="fas fa-calendar-alt"></i>
                                 <div>
-                                    <span class="info-title">Date</span>
+                                    <span class="info-title">Date</span><br>
                                     <span>April 09, 2025</span>
                                 </div>
                             </div>
                             <div class="info-box">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div>
-                                    <span class="info-title">Venue</span>
+                                    <span class="info-title">Venue</span><br>
                                     <span>SRL Auditorium, PSNACET</span>
                                 </div>
                             </div>
@@ -241,29 +369,220 @@ html {
         </div>
         
 
-                 </section>
+    </section>
               
+<style>
+/* 🔹 General Styling */
+body {
+    background: #0a0f1f;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 50px 0;
+}
 
+/* 🔹 Countdown Title */
+.countdown-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00ccff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
 
+/* 🔹 Countdown Container */
+/* .countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+} */
 
-        <div class="countdown-container">
-            <div class="countdown-box">
-                <span id="days">00</span>
-                <span class="label">Days</span>
-            </div>
-            <div class="countdown-box">
-                <span id="hours">00</span>
-                <span class="label">Hours</span>
-            </div>
-            <div class="countdown-box">
-                <span id="minutes">00</span>
-                <span class="label">Minutes</span>
-            </div>
-            <div class="countdown-box">
-                <span id="seconds">00</span>
-                <span class="label">Seconds</span>
-            </div>
+/* 🔹 Countdown Box */
+.countdown-box {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 🔹 Circular Progress */
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+/* 🔹 Background Circle */
+.bg-circle {
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 6;
+    fill: none;
+}
+
+/* 🔹 Animated Progress Circle */
+.progress {
+    stroke: url(#gradient);
+    stroke-width: 6;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+    transition: stroke-dashoffset 1s linear;
+}
+
+/* 🔹 Glow Effect */
+.glow {
+    filter: drop-shadow(0px 0px 10px #00ffcc);
+    animation: pulseGlow 1s infinite alternate;
+}
+
+/* 🔹 Countdown Number */
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* 🔹 Labels */
+.label {
+    font-size: 1rem;
+    color: #00ccff;
+    text-transform: uppercase;
+}
+/* 🔹 Ensure Countdown is Always in a Single Line */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    gap: 40px; /* Default spacing */
+}
+
+/* 🔹 Adjust for Tablets */
+@media (max-width: 1024px) {
+    .countdown-container {
+        gap: 30px;
+    }
+    .countdown-box {
+        width: 110px;
+        height: 110px;
+    }
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* 🔹 Adjust for Mobile Screens */
+@media (max-width: 768px) {
+    .countdown-container {
+        gap: 20px;
+        overflow-x: auto; /* Allows scrolling if needed */
+        justify-content: flex-start; /* Aligns items properly */
+        padding: 10px;
+    }
+
+    .countdown-box {
+        width: 90px;
+        height: 90px;
+    }
+
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
+}
+
+/* 🔹 Smallest Screens (Phones) */
+@media (max-width: 480px) {
+    .countdown-container {
+        gap: 15px;
+        overflow-x: auto;
+        padding: 10px;
+        justify-content: flex-start;
+        white-space: nowrap; /* Prevents line breaks */
+    }
+
+    .countdown-box {
+        width: 75px;
+        height: 75px;
+    }
+
+    .countdown-number {
+        font-size: 1.3rem;
+    }
+
+    .label {
+        font-size: 0.8rem;
+    }
+}
+
+</style>
+<br>
+<div class="countdown-container">
+    <!-- Days -->
+    <div class="countdown-box">
+        <svg class="progress-ring" width="140" height="140">
+            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+            <circle class="progress" id="days-ring" cx="70" cy="70" r="60"></circle>
+        </svg>
+        <div class="countdown-number">
+            <span id="days">00</span>
+            <div class="label">Days</div>
         </div>
+    </div>
+
+    <!-- Hours -->
+    <div class="countdown-box">
+        <svg class="progress-ring" width="140" height="140">
+            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+            <circle class="progress" id="hours-ring" cx="70" cy="70" r="60"></circle>
+        </svg>
+        <div class="countdown-number">
+            <span id="hours">00</span>
+            <div class="label">Hours</div>
+        </div>
+    </div>
+
+    <!-- Minutes -->
+    <div class="countdown-box">
+        <svg class="progress-ring" width="140" height="140">
+            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+            <circle class="progress" id="minutes-ring" cx="70" cy="70" r="60"></circle>
+        </svg>
+        <div class="countdown-number">
+            <span id="minutes">00</span>
+            <div class="label">Minutes</div>
+        </div>
+    </div>
+
+    <!-- Seconds -->
+    <div class="countdown-box">
+        <svg class="progress-ring" width="140" height="140">
+            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+            <circle class="progress" id="seconds-ring" cx="70" cy="70" r="60"></circle>
+        </svg>
+        <div class="countdown-number">
+            <span id="seconds">00</span>
+            <div class="label">Seconds</div>
+        </div>
+    </div>
+</div>
+
         
         <button id="register-btn">Register</button>
         
@@ -607,10 +926,6 @@ html {
                     <p>Priya G<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
 
 
-
-
-
-
                    
                 </div>
             </div>
@@ -622,36 +937,58 @@ html {
 
 
     <script>
-        function updateCountdown() {
-    const targetDate = new Date('April 9, 2025 00:00:00').getTime();
+    // Countdown Date (Change This)
+const countdownDate = new Date("April 9, 2025 00:00:00").getTime();
+
+// Function to Update Countdown
+function updateCountdown() {
     const now = new Date().getTime();
-    const difference = targetDate - now;
-    const registerButton = document.getElementById("register-btn");
+    const timeLeft = countdownDate - now;
 
-    if (difference <= 0) {
-        document.getElementById("days").innerHTML = "00";
-        document.getElementById("hours").innerHTML = "00";
-        document.getElementById("minutes").innerHTML = "00";
-        document.getElementById("seconds").innerHTML = "00";
-        registerButton.innerHTML = "Registration Closed";
-        registerButton.disabled = true;
-        clearInterval(interval);
-        return;
-    }
+    // Convert Time to Days, Hours, Minutes, Seconds
+    let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    // Update HTML
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
 
-    document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-    document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+    // Update Circular Progress
+    updateCircle("days-ring", days, 30);
+    updateCircle("hours-ring", hours, 24);
+    updateCircle("minutes-ring", minutes, 60);
+    updateCircle("seconds-ring", seconds, 60);
+
+    // Add Glow Effect When Time is Running Low
+    applyGlowEffect("seconds-ring", seconds);
 }
 
-updateCountdown(); // Initial call
-const interval = setInterval(updateCountdown, 1000);
+// Function to Animate Circular Progress
+function updateCircle(id, value, max) {
+    const circle = document.getElementById(id);
+    const circumference = 2 * Math.PI * 60;
+    const progress = (value / max) * circumference;
+    circle.style.strokeDashoffset = circumference - progress;
+}
+
+// Function to Apply Glow Effect
+function applyGlowEffect(id, value) {
+    const circle = document.getElementById(id);
+    if (value <= 10) {
+        circle.classList.add("glow");
+    } else {
+        circle.classList.remove("glow");
+    }
+}
+
+// Update Countdown Every Second
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
 
     </script>
     <script>
@@ -662,5 +999,6 @@ const interval = setInterval(updateCountdown, 1000);
             offset: 100, // Trigger animation 100px before it enters the viewport
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
