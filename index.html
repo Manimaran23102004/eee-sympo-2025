@@ -157,7 +157,7 @@ html {
 
 /* 🔹 Hover Effect with Gold Glow */
 .nav-link:hover {
-    color: #ffcc00 !important; /* Gold Hover Color */
+    color: #3f778c !important; /* Gold Hover Color */
     text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
 }
 
@@ -246,7 +246,7 @@ html {
 </nav>
 
     
-    <div class="container text-center mt-5"><br><br>
+    <div class="container text-center mt-5"><br>
         <div class="container text-center mt-5">
             <h1 class="college-name">PSNA College of Engineering and Technology</h1>
             <p class="department-name mt-4 mb-4"><strong>Department of Electrical and Electronics Engineering</strong></p>
@@ -289,7 +289,7 @@ html {
 .info-box {
     display: flex;
     align-items: center;
-    background: rgb(255, 255, 255); /* Solid Black Background */
+    background: #cbdced; /* Solid Black Background */
     border-radius: 12px;
     padding: 20px;
     min-width: 220px;
@@ -372,245 +372,258 @@ html {
     </section>
               
 <style>
-/* 🔹 General Styling */
-body {
-    background: #0a0f1f;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: white;
-    margin: 0;
-    padding: 50px 0;
-}
-
-/* 🔹 Countdown Title */
-.countdown-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #00ccff;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-/* 🔹 Countdown Container */
-/* .countdown-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-} */
-
-/* 🔹 Countdown Box */
-.countdown-box {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* 🔹 Circular Progress */
-.progress-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-}
-
-/* 🔹 Background Circle */
-.bg-circle {
-    stroke: rgba(255, 255, 255, 0.2);
-    stroke-width: 6;
-    fill: none;
-}
-
-/* 🔹 Animated Progress Circle */
-.progress {
-    stroke: url(#gradient);
-    stroke-width: 6;
-    fill: none;
-    stroke-linecap: round;
-    stroke-dasharray: 377;
-    stroke-dashoffset: 377;
-    transition: stroke-dashoffset 1s linear;
-}
-
-/* 🔹 Glow Effect */
-.glow {
-    filter: drop-shadow(0px 0px 10px #00ffcc);
-    animation: pulseGlow 1s infinite alternate;
-}
-
-/* 🔹 Countdown Number */
-.countdown-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-    position: relative;
-    z-index: 2;
-}
-
-/* 🔹 Labels */
-.label {
-    font-size: 1rem;
-    color: #00ccff;
-    text-transform: uppercase;
-}
-/* 🔹 Ensure Countdown is Always in a Single Line */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+/* Container for Countdown Timer */
 .countdown-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap; /* Prevents wrapping */
-    gap: 40px; /* Default spacing */
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-/* 🔹 Adjust for Tablets */
-@media (max-width: 1024px) {
-    .countdown-container {
-        gap: 30px;
-    }
-    .countdown-box {
-        width: 110px;
-        height: 110px;
-    }
-    .countdown-number {
-        font-size: 1.8rem;
-    }
+/* Countdown Box */
+.time-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    width: 100px; /* Equal width for all boxes */
+    text-align: center;
+    box-shadow: 0 0 5px rgba(108, 218, 86, 0.5);
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
-/* 🔹 Adjust for Mobile Screens */
-@media (max-width: 768px) {
+
+
+/* Countdown Value */
+.time-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    /* text-shadow: 0 0 8px rgba(0, 255, 255, 0.7); */
+}
+
+/* Countdown Label */
+.time-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
     .countdown-container {
-        gap: 20px;
-        overflow-x: auto; /* Allows scrolling if needed */
-        justify-content: flex-start; /* Aligns items properly */
-        padding: 10px;
+        gap: 5px;
     }
 
-    .countdown-box {
-        width: 90px;
-        height: 90px;
+    .time-box {
+        width: 70px; /* Adjust width for smaller screens */
+        padding: 8px;
     }
 
-    .countdown-number {
+    .time-value {
         font-size: 1.5rem;
     }
 
-    .label {
-        font-size: 0.9rem;
+    .time-label {
+        font-size: 0.7rem;
     }
 }
 
-/* 🔹 Smallest Screens (Phones) */
-@media (max-width: 480px) {
-    .countdown-container {
-        gap: 15px;
-        overflow-x: auto;
-        padding: 10px;
-        justify-content: flex-start;
-        white-space: nowrap; /* Prevents line breaks */
-    }
-
-    .countdown-box {
-        width: 75px;
-        height: 75px;
-    }
-
-    .countdown-number {
-        font-size: 1.3rem;
-    }
-
-    .label {
-        font-size: 0.8rem;
-    }
-}
 
 </style>
 <br>
 <div class="countdown-container">
-    <!-- Days -->
-    <div class="countdown-box">
-        <svg class="progress-ring" width="140" height="140">
-            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-            <circle class="progress" id="days-ring" cx="70" cy="70" r="60"></circle>
-        </svg>
-        <div class="countdown-number">
-            <span id="days">00</span>
-            <div class="label">Days</div>
-        </div>
+    <div class="time-box">
+        <div class="time-value" id="days">00</div>
+        <div class="time-label">Days</div>
     </div>
-
-    <!-- Hours -->
-    <div class="countdown-box">
-        <svg class="progress-ring" width="140" height="140">
-            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-            <circle class="progress" id="hours-ring" cx="70" cy="70" r="60"></circle>
-        </svg>
-        <div class="countdown-number">
-            <span id="hours">00</span>
-            <div class="label">Hours</div>
-        </div>
+    <div class="time-box">
+        <div class="time-value" id="hours">00</div>
+        <div class="time-label">Hours</div>
     </div>
-
-    <!-- Minutes -->
-    <div class="countdown-box">
-        <svg class="progress-ring" width="140" height="140">
-            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-            <circle class="progress" id="minutes-ring" cx="70" cy="70" r="60"></circle>
-        </svg>
-        <div class="countdown-number">
-            <span id="minutes">00</span>
-            <div class="label">Minutes</div>
-        </div>
+    <div class="time-box">
+        <div class="time-value" id="minutes">00</div>
+        <div class="time-label">Minutes</div>
     </div>
-
-    <!-- Seconds -->
-    <div class="countdown-box">
-        <svg class="progress-ring" width="140" height="140">
-            <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
-            <circle class="progress" id="seconds-ring" cx="70" cy="70" r="60"></circle>
-        </svg>
-        <div class="countdown-number">
-            <span id="seconds">00</span>
-            <div class="label">Seconds</div>
-        </div>
+    <div class="time-box">
+        <div class="time-value" id="seconds">00</div>
+        <div class="time-label">Seconds</div>
     </div>
 </div>
 
-        
-        <button id="register-btn">Register</button>
+<style>
+    /* Button Styling */
+    #register-btn {
+        background: #cbdced;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Hover Effect */
+    #register-btn:hover {
+        background: linear-gradient(to bottom, #1b4d5a, #133b47);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+    }
+
+    /* Click Effect */
+    #register-btn:active {
+        transform: translateY(2px);
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<div><br>
+    <button class="btn btn-register" id="register-btn">Register -></button>
+      
+</div>
         
     </div>
-
+<style>
+       #view{
+        background: #cbdced;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+</style>
     <div class="container text-center mt-4">
         <h1>Event Brochure</h1>
         <p>Click the button below to view/download the brochure:</p>
-        <a href="brochure.pdf" class="btn btn-success mt-2">View Brochure</a>
+        <a href="brochure.pdf" class="btn mt-2" id="view">View Brochure</a>
     </div>
 
+
   <section id="event">
+
+<style>
+
+    /* Event Section */
+    #event {
+        padding: 50px 0;
+    }
+
+    /* Event Heading */
+    #event h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 600;
+        color: #222;
+    }
+
+    /* Event Card Styles */
+    .event-card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #f5f5dc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    /* Hover Effect */
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image & Video Styling */
+    .event-card video,
+    .event-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    /* Card Body */
+    .event-card .card-body {
+        text-align: center;
+        padding: 15px;
+        background: #f5f5dc;
+    }
+
+    /* Card Titles */
+    .event-card .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: black;
+        transition: color 0.3s ease-in-out;
+    }
+
+    /* Hover Effect on Title */
+    .event-card:hover .card-title {
+        color: #005477;
+    }
+
+    /* Event Card Links */
+    .event-card-link {
+        text-decoration: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        #event h2 {
+            font-size: 2rem;
+        }
+
+        .event-card .card-title {
+            font-size: 1rem;
+        }
+
+        .event-card video,
+        .event-card img {
+            height: 180px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .event-card video,
+        .event-card img {
+            height: 150px;
+        }
+
+        .event-card .card-title {
+            font-size: 0.9rem;
+        }
+    }
+
+
+</style>
 
 
 
     <div class="container mt-5">
-      <b>  <h2 class="text-center text-white"><strong>Our Events</strong></h2></b>
+      <b><h2 class="text-center text-white"><strong>Our Events</strong></h2></b>
     
         <div class="row justify-content-center">
             <!-- Row 1 -->
             <div class="col-md-4 mb-4" data-aos="flip-left">
                 <a href="task1.html" class="event-card-link">
                     <div class="card event-card">
-                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
-                            <source src="./img/" type="video/mp4">
-                        </video>
+                        <img class="card-img-top" src="./img/paper.avif" alt="">
                         <div class="card-body text-center">
-                            <h5 class="card-title">PAPER VISTA</h5>
+                            <h5 class="card-title">Paper Vista -></h5>
                         </div>
                     </div>
                 </a>
@@ -619,11 +632,9 @@ body {
             <div class="col-md-4 mb-4" data-aos="flip-right">
                 <a href="task2.html" class="event-card-link">
                     <div class="card event-card">
-                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
-                            <source src="./img/" type="video/mp4">
-                        </video>
+                        <img class="card-img-top" src="./img/debate.avif" alt="">
                         <div class="card-body text-center">
-                            <h5 class="card-title">CLASH FORUM</h5>
+                            <h5 class="card-title">Clash Forum -></h5>
                         </div>
                     </div>
                 </a>
@@ -632,11 +643,9 @@ body {
             <div class="col-md-4 mb-4" data-aos="flip-left">
                 <a href="task3.html" class="event-card-link">
                     <div class="card event-card">
-                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
-                            <source src="./img/" type="video/mp4">
-                        </video>
+                        <img class="card-img-top" src="./img/graphi.avif" alt="">
                         <div class="card-body text-center">
-                            <h5 class="card-title">GRAPHI PLOSION</h5>
+                            <h5 class="card-title">Graphi Xplosion -></h5>
                         </div>
                     </div>
                 </a>
@@ -648,11 +657,19 @@ body {
             <div class="col-md-4 mb-4" data-aos="flip-right">
                 <a href="task4.html" class="event-card-link">
                     <div class="card event-card">
-                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
-                            <source src="./img/" type="video/mp4">
-                        </video>
+                        <img class="card-img-top" src="./img/roborace.avif" alt="">
                         <div class="card-body text-center">
-                            <h5 class="card-title">SPEECH FRENZY</h5>
+                            <h5 class="card-title">Bot Clash -></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="flip-left">
+                <a href="task6.html" class="event-card-link">
+                    <div class="card event-card">
+                        <img class="card-img-top" src="./img/snake and ladder (1).jpeg" alt="">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Snake & Ladder -></h5>
                         </div>
                     </div>
                 </a>
@@ -661,32 +678,166 @@ body {
             <div class="col-md-4 mb-4" data-aos="flip-left">
                 <a href="task5.html" class="event-card-link">
                     <div class="card event-card">
-                        <img class="card-img-top" src="./img/coding1.png" alt="">
+                        <img class="card-img-top" src="./img/code.avif" alt="">
                         <div class="card-body text-center">
-                            <h5 class="card-title">GLITCHFIX</h5>
+                            <h5 class="card-title">Glitchfix -></h5>
                         </div>
                     </div>
                 </a>
             </div>
     
-            <div class="col-md-4 mb-4" data-aos="flip-right">
-                <a href="task6.html" class="event-card-link">
-                    <div class="card event-card">
-                        <video class="card-img-top" autoplay loop muted playsinline preload="auto">
-                            <source src="./img/" type="video/mp4">
-                        </video>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">ROLL & RISE</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+          
         </div>
     </div>
 
 </section>
 
-<section id="rules">
+
+<style>
+       .gallery-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Carousel Image Styling */
+.carousel-inner img {
+    width: 100%;
+    height: 400px; /* Fixed height for uniform size */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 300px; /* Adjust height for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner img {
+        height: 250px; /* Adjust height for mobile */
+    }
+}
+</style>
+
+<div class="container mt-5">
+    <h2 class="gallery-heading">Our Gallery</h2>
+    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./gallery/gal1.jpeg" class="d-block w-100" alt="Gallery Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="./gallery/gal2.jpeg" class="d-block w-100" alt="Gallery Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="./gallery/gal3.jpeg" class="d-block w-100" alt="Gallery Image 3">
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+
+
+<style>
+    /* General Styling */
+body {
+    background-color: #1a1a2e;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Section Styling */
+#rules {
+    padding: 60px 0;
+}
+
+/* Section Heading */
+#rules h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Info Card Styling */
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Icon Styling */
+.info-card .icon {
+    font-size: 2rem;
+    color: #00ffff;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Title Styling */
+.info-card .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.info-card p {
+    font-size: 1rem;
+    color: #d3d3d3;
+}
+
+/* Hover Icon Effect */
+.info-card:hover .icon {
+    color: #614bde;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #rules h2 {
+        font-size: 2rem;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
+
+    .info-card .card-title {
+        font-size: 1.1rem;
+    }
+
+    .info-card p {
+        font-size: 0.9rem;
+    }
+}
+
+</style>
+
+    <section id="rules">
 
 
     <div class="container mt-5">
@@ -761,177 +912,230 @@ body {
 
 
 <style>
-
 /* Footer Styling */
 .footer {
-    background: #0b0e14;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 40px 0;
-    width: 100%;
-    position: relative;
+    padding: 50px 0;
     font-family: 'Poppins', sans-serif;
-    bottom: 0;
-    left: 0;
 }
 
-/* Footer Links Container */
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px; /* Reduced spacing for better alignment */
-}
-
-/* Footer Items */
-.footer-item {
-    text-align: center;
-    margin-bottom: 5px; /* Reduced extra spacing */
+/* Footer Heading */
+.footer h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
 /* Footer Links */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-item {
+    margin-bottom: 10px;
+}
+
 .footer-link {
     color: white;
-    font-size: 1rem; /* Standard size */
     text-decoration: none;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
-    gap: 5px; /* Reduced space between icon and text */
+    gap: 8px;
     transition: color 0.3s ease-in-out;
 }
 
-/* Hover Effect */
-.footer-link:hover {
-    color: #009dff;
-}
-
-/* Icons */
 .footer-link i {
-    font-size: 1.2rem; /* Properly sized */
-    color: #009dff;
+    font-size: 1.5rem;
 }
 
-/* Map Container */
-.map-container {
-    width: 100%;
-    max-width: 350px; /* Compact size */
-    margin: 5px auto; /* Balanced space */
-    border-radius: 10px;
-    overflow: hidden;
+.footer-link:hover {
+    color: #ffffff;
 }
 
-/* Responsive Iframe */
+/* Google Map Styling */
 .map-container iframe {
     width: 100%;
-    height: 160px; /* Adjusted for balance */
-    border: 0;
+    height: 250px;
     border-radius: 10px;
+    border: none;
 }
 
 /* Coordinators Section */
-.coordinators {
-    text-align: center; /* Centered alignment */
-    padding-left: 0;
+.coordinators p {
+    font-size: 1rem;
+    color: #d3d3d3;
+    margin-bottom: 8px;
 }
 
-/* Highlighted Text */
-.highlight {
-    color: #009dff;
-    font-weight: bold;
-    margin-top: 20px;
+.coordinators i {
+    color: #00ffff;
+    margin-right: 5px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .footer-links {
-        text-align: center;
+    .footer h4 {
+        font-size: 1.3rem;
     }
-    .map-container {
-        max-width: 90%;
+
+    .footer p {
+        font-size: 0.9rem;
     }
-    .map-container iframe {
-        height: 140px; /* Smaller for mobile */
+
+    .footer-link {
+        font-size: 1rem;
     }
 }
+
+@media (max-width: 576px) {
+    .map-container iframe {
+        height: 200px;
+    }
+
+    .footer h4 {
+        font-size: 1.2rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+
+    .footer-link {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Phone Number Link Styling */
+.event-coordinators a {
+    color: #ffffff;  /* Neon blue color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.event-coordinators a:hover {
+    color: #3f4da6; 
+    text-decoration: underline;
+}
+
+/* Icon and Link Alignment */
+.event-coordinators i {
+    color: #2f9348;
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .event-coordinators a {
+        font-size: 1rem;
+    }
+
+    .event-coordinators i {
+        font-size: 1rem;
+    }
+}
+
+
 
 
 </style>
 
 
 <section id="contact">
-
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <!-- Left Section: Social Media & Contact -->
-            <div class="col-md-6 text-center">
-                <div class="footer-links">
-                    <!-- Email -->
-                    <div class="footer-item">
-                        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSDZcwbDBZXfmTscCbzPztfrbrWmmbkkMwgJxHLWLSKfZGsWMkrTBrWkCXfwWMGChDvfXLCQ" 
-                           target="_blank" class="footer-link">
-                            <i class="fas fa-envelope"></i> Contact on Mail
-                        </a>
-                    </div>
-            
-                    <!-- Google Map -->
-                    <div class="footer-item">
-                        <div class="map-container">
-                            <a href="https://goo.gl/maps/sK1W8DxP9PzT5X5r6" target="_blank">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0728649393736!2d77.89789722508368!3d10.415787689711928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9ffb95456ce7f%3A0x14d566dfc1364080!2sPSNA%20College%20Of%20Engineering%20And%20Technology!5e0!3m2!1sen!2sin!4v1741874785696!5m2!1sen!2sin" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
+    <footer class="footer">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                
+                <!-- Contact Info Column -->
+                <div class="col-md-4">
+                    <h4>Contact Info</h4>
+                    <div class="footer-links">
+                        <div class="footer-item">
+                            <a href="mailto:example@gmail.com" target="_blank" class="footer-link">
+                                <i class="fas fa-envelope"></i> Email Us
                             </a>
                         </div>
-                    </div>
-            
-                    <!-- LinkedIn -->
-                    <div class="footer-item">
-                        <a href="https://www.linkedin.com/in/psna-eee-dindigul-7158b21a1/" target="_blank" class="footer-link">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                    </div>
-            
-                    <!-- Instagram -->
-                    <div class="footer-item">
-                        <a href="https://www.instagram.com/psnacetofficial/" target="_blank" class="footer-link">
-                            <i class="fab fa-instagram"></i> Follow on Instagram
-                        </a>
+                       
+                        <div class="footer-item">
+                            <a href="https://www.linkedin.com/in/psna-eee-dindigul-7158b21a1/" target="_blank" class="footer-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                        <div class="footer-item">
+                            <a href="https://www.instagram.com/psnacetofficial/" target="_blank" class="footer-link">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                        <div class="footer-item">
+                            <div class="map-container">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.0728649393736!2d77.89789722508368!3
+                                    d10.415787689711928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9ffb95456ce7f%3A0x14d566dfc1364080!2sPSNA%20College%20Of%20Engineering%20And%20Technology!5e0!3m2!1sen!2sin!4v1741874785696!5m2!1sen!2sin" 
+                                    allowfullscreen="" 
+                                    loading="lazy" >
+                                </iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
 
-            <!-- Right Section: Coordinators -->
-            <div class="col-md-6 text-center text-md-start">
-                <div class="coordinators">
-
-
-                    <h4 class="highlight">Staff Coordinator</h4>
-                    <p>Dr. I. Gerald Christopher Raj<br> EEE <br>
-                    <p>Mr. B. Pushpavanam<br>AP/Prof. EEE <br>
-                    <p>Mr. G. Praveenraj<br>AP/prof. EEE <br>
-
-
-
-                    <h4 class="highlight">Event Coordinator</h4>
-                    <p>Dhanush Kumar C<br> IV Year EEE <br> <i class="fas fa-phone"></i> +91 11111111</p>
-                    <p>Pavithraa M<br> IV Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
-                    <p>Avishkar M S<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
-                    <p>Yuvan M<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
-                    <p>Aishwarya P<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
-                    <p>Priya G<br> III Year EEE <br> <i class="fas fa-phone"></i> +91 111111111</p>
-
-
-                   
+              
+                <!-- Staff Coordinators Column -->
+                <div class="col-md-4">
+                    <h4>Staff Coordinators</h4>
+                    <p>Dr. I. Gerald Christopher Raj (Prof. EEE)</p>
+                    <p>Mr. B. Pushpavanam (AP/Prof. EEE)</p>
+                    <p>Mr. G. Praveenraj (AP/Prof. EEE)</p>
                 </div>
+  <!-- Event Coordinators Column -->
+  <div class="col-md-4 event-coordinators">
+    <h4>Event Coordinators</h4>
+
+    <p>Dhanush Kumar C (IV Year EEE) <br> 
+        <i class="fas fa-phone"></i>
+        <a href="tel:+918838038850">+91 88380 38850</a>
+    </p>
+
+    <p>Pavithraa M (IV Year EEE) <br> 
+        <i class="fas fa-phone"></i> 
+        <a href="tel:+919489735766">+91 94897 35766</a>
+    </p>
+
+    <p>Avishkar M S (III Year EEE) <br> 
+        <i class="fas fa-phone"></i>
+        <a href="tel:+918072511353">+91 80725 11353</a>
+    </p>
+
+    <p>Yuvan M (III Year EEE) <br> 
+        <i class="fas fa-phone"></i> 
+        <a href="tel:+916383564758">+91 63835 64758</a>
+    </p>
+
+    <p>Aishwarya P (III Year EEE) <br> 
+        <i class="fas fa-phone"></i>
+        <a href="tel:+918148854466">+91 81488 54466</a>
+    </p>
+
+    <p>Priya G (III Year EEE) <br> 
+        <i class="fas fa-phone"></i> 
+        <a href="tel:+916369611972">+91 63696 11972</a>
+    </p>
+</div>
+
+
+
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </section>
     
 
