@@ -300,7 +300,111 @@ html {
   <a href="index.html" class="btn back-btn"><strong>⬅ Back</strong></a>
 </div>
 
-
+<style>
+  .event-container {
+     background: rgba(255, 255, 255, 0.1);
+     padding: 20px;
+     border-radius: 15px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+     animation: fadeIn 1.5s ease-in-out;
+ }
+ 
+ /* Event Details */
+ .event-details {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     align-items: center;
+     justify-content: center;
+     background: rgba(0, 0, 0, 0.2);
+     padding: 15px;
+     border-radius: 10px;
+     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+ }
+ 
+ /* Registration Fee */
+ .registration-fee {
+     text-align: center;
+     background: rgba(0, 0, 0, 0.2);
+     padding: 15px;
+     border-radius: 10px;
+     margin-top: 15px;
+     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+ }
+ 
+ /* Button Container */
+ .register-btn-container {
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+ }
+ 
+ /* Stylish Register Button */
+ .register-btn {
+     background: linear-gradient(45deg, #61afc5, #47607e);
+     color: white;
+     border: none;
+     padding: 12px 24px;
+     font-size: 1.5rem;
+     border-radius: 10px;
+     transition: all 0.3s ease-in-out;
+     box-shadow: 0px 4px 15px rgba(0, 114, 255, 0.6);
+     text-transform: uppercase;
+ }
+ 
+ .register-btn:hover {
+     transform: scale(1.1);
+     box-shadow: 0px 6px 20px rgba(0, 114, 255, 0.8);
+ }
+ 
+ /* Contact Box */
+ .contact-box {
+     background: rgba(0, 0, 0, 0.2);
+     padding: 15px;
+     border-radius: 10px;
+     margin-top: 15px;
+     text-align: center;
+     box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+ }
+ 
+ /* Contact List */
+ .contact-list {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 15px;
+ }
+ 
+ /* Contact List Items */
+ .contact-list p {
+     background: rgba(255, 255, 255, 0.2);
+     padding: 8px 15px;
+     border-radius: 8px;
+     color: white;
+     font-size: 1.1rem;
+     font-weight: 500;
+ }
+ 
+ /* Responsive Adjustments */
+ @media (max-width: 768px) {
+     .event-details {
+         flex-direction: column;
+         align-items: flex-start;
+         text-align: left;
+     }
+ 
+     .contact-list {
+         flex-direction: column;
+         align-items: center;
+     }
+ 
+     .register-btn {
+         font-size: 1.2rem;
+         padding: 10px 20px;
+     }
+ }
+ 
+   </style>
   <div class="task1-container p-4 rounded">
       <div class="row align-items-center p-3 rounded shadow">
           <!-- Left Side - Event Image -->
@@ -310,19 +414,21 @@ html {
 
           <!-- Right Side - Event Details & Registration -->
           <div class="col-md-6 fade-text d-flex flex-column justify-content-start"><br>
-            <div class="d-flex flex-wrap align-items-center">
-               <br> <h3 class="me-4"><strong>Date :</strong> 9th April 2025</h3>
-                <h3 class="me-4"><strong>Time :</strong> 11:00 AM - 12:00 PM</h3>
-                <h3><strong>Venue :</strong> Smart Class 1st Floor</h3>
-            </div>
-        
-            <h2 class="mt-3">Registration Fee : ₹250+GST per head</h2>
-            <h3><strong>(Including Lunch)</strong></h3>
-        
-            <!-- Register Button in the Same Line -->
-            <div class="register-btn-container fade-text">
-              <a href="register.html" class="btn register-btn"><strong>Register Now</strong></a>
+            <div class="d-flex flex-wrap align-items-center event-details">
+              <h3 class="me-4"><strong>Date:</strong> 9th April 2025</h3>
+              <h3 class="me-4"><strong>Time:</strong> 11:00 AM - 12:00 PM</h3>
+              <h3 class="me-4"><strong>Venue:</strong> Smart Class 1st Floor</h3>
+            
           </div>
+          
+          <div class="event-details">
+              <h2 class="mt-3"><strong>Registration Fee:</strong> ₹250+GST per head</h2>
+              <h3 class="me-4"><strong>(Including Lunch)</strong></h3>
+          </div>
+          <!-- Register Button in the Same Line -->
+          <div class="register-btn-container fade-text">
+            <a href="register.html" class="btn register-btn"><strong>Register Now</strong></a>
+        </div>
           
 
 
