@@ -8,380 +8,22 @@
     <link rel="stylesheet" href="styles.css"> <!-- Custom CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<!-- <style>
-  /* General Styling */
-  body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: white;
-      text-align: center;
-      overflow-x: hidden;
-      animation: fadeIn 1.5s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-  }
-
-  .live-background {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: url('./img/background.jpg') no-repeat center center/cover;
-      z-index: -1;
-      filter: blur(3px) brightness(0.7);
-  }
-
-  /* Animated Gradient Header */
-  .power-gale-heading {
-      font-size: 4rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #ffffff, #cccccc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
-      animation: glow 2s infinite alternate;
-  }
-
-  @keyframes glow {
-      0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.7); }
-      100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1); }
-  }
-
-  /* Smooth Buttons */
-  .btn-custom {
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
-      color: white;
-      font-size: 1.5rem;
-      padding: 12px 24px;
-      border-radius: 10px;
-      text-transform: uppercase;
-      font-weight: bold;
-      box-shadow: 0px 4px 15px rgba(255, 75, 43, 0.6);
-      transition: all 0.3s ease-in-out;
-  }
-
-  .btn-custom:hover {
-      transform: scale(1.1);
-      box-shadow: 0px 6px 20px rgba(255, 75, 43, 0.8);
-  }
-
-  /* Event Cards */
-  .event-card {
-      border-radius: 15px;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      padding: 15px;
-  }
-
-  .event-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.4);
-  }
-
-  .card video {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: opacity 0.3s ease-in-out;
-  }
-
-  .card video:hover {
-      opacity: 0.8;
-  }
-</style> -->
 <style>
-     /* Event Cards Styling */
-.event-card {
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-bottom: 30px; /* Adds spacing between cards */
-  padding: 10px; /* Adds some inner spacing */
-}
+  /* 🔹 Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@300;500;700&display=swap');
 
-/* Hover Effect */
-.event-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Card Images */
-.event-card .card-img-top {
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-
-/* Card Title */
-.event-card .card-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #0072ff;
-}
-
-/* Remove Underline from Links */
-.event-card-link {
-  text-decoration: none;
-}
-
-/* Responsive Grid */
-@media (max-width: 768px) {
-  .event-card {
-      margin-bottom: 20px; /* Adjust spacing for mobile */
-  }
-  .event-card .card-title {
-      font-size: 1.2rem;
-  }
-}
-
-
-
-
-/* Title Styling */
-.exciting-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffcc00;
-  text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
-  margin-bottom: 20px;
-}
-
-/* Glassmorphism Box */
-.exciting-box {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: auto;
-}
-
-/* List Styling */
-.exciting-list {
-  padding: 0;
-}
-
-/* List Items */
-.exciting-list .list-group-item {
-  background: transparent;
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 500;
+/* 🔹 General Styling */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
   color: white;
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  transition: transform 0.2s ease-in-out;
-}
-
-/* Hover Effect */
-.exciting-list .list-group-item:hover {
-  transform: scale(1.05);
-  color: #ffcc00;
-}
-
-/* Icons */
-.icon {
-  font-size: 1.8rem;
-  margin-right: 15px;
-}
-
-
-
-
-/* Glowing Power Gale Heading */
-.power-gale-heading {
   text-align: center;
-  font-size: 4rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  
-  background: linear-gradient(45deg, #06a71e, #b41a1a, #ff0099);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0px 0px 10px rgba(49, 101, 39, 0.8), 
-               0px 0px 20px rgba(255, 0, 153, 0.7), 
-               0px 0px 30px rgba(0, 198, 255, 0.6);
-
-  animation: glow 2s infinite alternate;
-}
-
-/* Glow Animation */
-@keyframes glow {
-  0% {
-      text-shadow: 0px 0px 10px rgba(37, 207, 25, 0.8),
-                   /* 0px 0px 20px rgba(108, 55, 87, 0.7); */
-  }
-  100% {
-      /* text-shadow: 0px 0px 20px rgb(112, 187, 105),  */
-                   /* 0px 0px 30px rgb(65, 67, 172), */
-                   /* 0px 0px 40px rgb(77, 128, 73); */
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .power-gale-heading {
-      font-size: 3rem;
-  }
-}
-
-
-
-
-/* Section Title */
-.section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-  margin-bottom: 20px;
-}
-
-/* Glassmorphism Box */
-.info-box {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: auto;
-}
-
-/* List Styling */
-.info-list {
+  overflow-x: hidden;
+  margin: 0;
   padding: 0;
 }
 
-/* List Items */
-.info-list .list-group-item {
-  background: transparent;
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  transition: transform 0.2s ease-in-out;
-}
-
-/* Hover Effect */
-.info-list .list-group-item:hover {
-  transform: scale(1.05);
-  color: #ffcc00;
-}
-
-/* Icons */
-.list-group-item span {
-  font-size: 1.8rem;
-  margin-right: 15px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .section-title {
-      font-size: 1.8rem;
-  }
-  .info-box {
-      max-width: 90%;
-  }
-}
-
-
-
-
-
-
-
-.event-logo {
-    max-width: 250px;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .card {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  @keyframes moveLines {
-    0% { transform: translateX(-100%); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateX(100%); opacity: 0; }
-  }
-  
-  @keyframes blinkParticles {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 1; }
-  }
-  
-  /* Main animated background */
-  .live-background {
-    background: linear-gradient(-45deg, #0a192f, #1f4068, #278ea5, #1b1b2f);
-    background-size: 400% 400%;
-    animation: gradientAnimation 8s ease infinite;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  
-  /* Flowing neon circuit lines */
-  .live-background::before,
-  .live-background::after {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 3px;
-    background: rgba(0, 255, 255, 0.7);
-    top: 30%;
-    left: -50%;
-    animation: moveLines 6s linear infinite;
-  }
-  
-  .live-background::after {
-    top: 70%;
-    animation-duration: 8s;
-  }
-  
-  /* Blinking particles */
-  .particle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: rgba(0, 255, 255, 0.8);
-    border-radius: 50%;
-    animation: blinkParticles 2s infinite alternate;
-  }
-
-  /* Video Background */
+/* 🔹 Background Video Section */
 .video-container {
   position: fixed;
   top: 0;
@@ -389,7 +31,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Send the video behind all content */
+  z-index: -1;
 }
 
 .background-video {
@@ -399,130 +41,467 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the full screen */
-  opacity: 0.7; /* Adjust transparency for better readability */
-}
-
-/* Electric Glow Effect for Text */
-.text-glow {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-}
-
-
-
-
-/* Ensure the video fits like an image */
-.card video {
-  width: 100%;
-  height: 200px;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  opacity: 0.7; /* Adjust transparency */
+  filter: brightness(0.6) contrast(1.2); /* Enhances blending */
 }
 
-
-
-/* Ensure Smooth Video Playback */
-.card video {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  transition: opacity 0.3s ease-in-out;
+/* 🔹 Glassmorphism Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: 0.4s ease-in-out;
 }
 
-/* Fade-in Effect on Hover */
-.card video:hover {
-  opacity: 0.8;
+/* 🔹 Navbar Hover Effect */
+.navbar:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 
+/* 🔹 Navbar Links */
+.nav-link {
+  font-size: 18px;
+  color: white !important;
+  transition: 0.3s;
+}
 
-hr{
-        border:none;
-        height:3px;
-        background-color:black;
-        margin:20px 0;
-    }
-     .paper-vista-heading {
-        font-size: 3em;
-        color: #fff; /* Text color */
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.6); /* Glow effect */
-     }
+/* 🔹 Navbar Link Hover */
+.nav-link:hover {
+  color: #30a1c6 !important;
+}
+
+/* 🔹 Hero Section */
+.hero-content {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ffffff, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 20px rgba(0, 204, 255, 0.8);
+  animation: glow 2s infinite alternate ease-in-out;
+}
+
+/* 🔹 Smooth Glow Animation */
+@keyframes glow {
+  0% { text-shadow: 0 0 15px rgba(0, 204, 255, 0.6); }
+  100% { text-shadow: 0 0 40px rgba(0, 204, 255, 1); }
+}
+
+/* 🔹 Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 3rem;
+      top: 150px;
+  }
+
+  .navbar {
+      backdrop-filter: blur(8px);
+  }
+}
+
 </style>
 <body>
     <div class="live-background"></div>
-    
-    <div class="header-container text-center">
-      <br>  <h1 class="paper-vista-heading">CLASH FORUM</h1>
-      <hr>
-    </div>
-    <div class="container mt-5">
-        <div class="container">
-            <a href="index.html" class="btn" style="
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                background: linear-gradient(45deg, #3774de, #24829c);
-                color: white;
-                padding: 8px 16px;
-                font-size: 1rem;
-                border-radius: 5px;
-                text-transform: uppercase;
-                font-weight: bold;
-                transition: all 0.3s ease-in-out;
-                box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.6);"
-                onmouseover="this.style.transform='scale(1.1)'"
-                onmouseout="this.style.transform='scale(1)'"><strong>⬅ Back</strong>
-            </a>
-        </div>
-    <div class="task1-container">
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="background-video">
+          <source src="./img/5372266-uhd_3840_2160_30fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+
+  <style>
+  /* Import Attractive Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+/* Header Container */
+.header-container {
+  margin-top: 10px; /* Adjust as needed */
+    text-align: center;
+    padding-top: 20px;
+    /* padding-bottom: 5px; */
+   
+}
+
+/* 3D Heading Effect */
+.paper-vista-heading {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 0px #5fa2ea, 
+                 8px 8px 0px rgba(0, 0, 0, 0.2);
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .paper-vista-heading {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .paper-vista-heading {
+        font-size: 2.2rem;
+    }
+}
+
+
+  </style>
+
+  <div class="header-container">
+    <h1 class="paper-vista-heading"><strong>CLASH FORUM</strong></h1><hr>
+</div>
+<style>
+  /* Background Styling */
+
+
+/* Container Styling */
+.task1-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: -30px; /* Pulls the entire section up */
+}
+
+/* Image Animation - Moves Left to Right */
+.event-image {
+  margin-top: -20px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideIn 1.5s ease-in-out forwards;
+}
+
+/* Text Fade-in Effect */
+.fade-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+}
+
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .event-image {
+        animation: fadeIn 1.5s ease-in-out forwards;
+    }
+}
+/* Center the Register Button */
+.register-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Stylish Register Button */
+.register-btn {
+  background: linear-gradient(45deg, #61afc5, #47607e);
+   color: white;
+   border: none;
+   padding: 12px 24px;
+   font-size: 1.5rem;
+   border-radius: 10px;
+   transition: all 0.3s ease-in-out;
+   box-shadow: 0px 4px 15px rgba(0, 114, 255, 0.6);
+   text-transform: uppercase;
+}
+
+.register-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 20px rgba(0, 114, 255, 0.8);
+}
+
+
+
+</style>
+<div class="container mt-5">
+  <!-- Back Button -->
+   <style>
+    /* Back Button Styling */
+.back-btn-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.back-btn {
+  background: #cbdced;
+        color: rgb(0, 0, 0);
+        font-size: 0.9rem; 
+        font-weight: bold;
+        border: none;
+        padding: 6px 12px;  
+        border-radius: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+}
+
+.back-btn:hover {
+  background: linear-gradient(to bottom, #1b4d5a, #133b47);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+}
+
+   </style>
+ <div class="back-btn-container">
+  <a href="index.html" class="btn back-btn"><strong>⬅ Back</strong></a>
+</div>
+
+
+  <div class="task1-container p-4 rounded">
+      <div class="row align-items-center p-3 rounded shadow">
+          <!-- Left Side - Event Image -->
+          <div class="col-md-6 text-center">
+              <img src="./img/clash.jpg" alt="CLASSH FORUM" class="event-image img-fluid">
+          </div>
+
+          <!-- Right Side - Event Details & Registration -->
+          <div class="col-md-6 fade-text d-flex flex-column justify-content-start"><br>
+            <div class="d-flex flex-wrap align-items-center">
+               <br> <h3 class="me-4"><strong>Date :</strong> 9th April 2025</h3>
+                <h3 class="me-4"><strong>Time :</strong> 11:00 AM - 12:00 PM</h3>
+                <h3><strong>Venue :</strong> Smart Class 1st Floor</h3>
+            </div>
         
-            <div class="row align-items-center p-4 rounded shadow text-white">
-                <!-- Left side - Image -->
-                <div class="col-md-6 text-center">
-                    <img src="./img/clash forum.png" alt="Paper Vista" class="img-fluid rounded shadow">
-                </div>
+            <h2 class="mt-3">Registration Fee : ₹250+GST per head</h2>
+            <h3><strong>(Including Lunch)</strong></h3>
+        
+            <!-- Register Button in the Same Line -->
+            <div class="register-btn-container fade-text">
+              <a href="register.html" class="btn register-btn"><strong>Register Now</strong></a>
+          </div>
+          
 
-                <!-- Right side - Event details -->
-                <div class="col-md-6">
-                    <h3><strong>Date :</strong> 9th April 2025</h3>
-                    <h3><strong>Time :</strong> 11:00 AM - 12:00 PM</h3>
-                    <h3><strong>Venue :</strong> Siemens Lab</h3>
-                    <h2>Registration Fee : ₹250+GST per head</h2>
-                    <h3>(Including Lunch)</h3>
-                    <div class="mt-4 text-center text-md-start">
-                        <a href="register.html" class="btn register-btn btn-lg px-4 fw-bold" style="
-                            background: linear-gradient(45deg, #00c6ff, #0072ff);
-                            color: white;
-                            border: none;
-                            padding: 12px 24px;
-                            font-size: 1.5rem;
-                            border-radius: 10px;
-                            transition: all 0.3s ease-in-out;
-                            box-shadow: 0px 4px 15px rgba(0, 114, 255, 0.6);
-                            text-transform: uppercase;"
-                            onmouseover="this.style.transform='scale(1.1)'"
-                            onmouseout="this.style.transform='scale(1)'"><strong>Register Now</strong>
-                        </a>
-                    </div>
 
-                    <div class="mt-5 p-4 rounded" style="
-                        background: rgba(255, 255, 255, 0.1);
-                        backdrop-filter: blur(10px);
-                        border-radius: 10px;
-                        border: 1px solid rgba(255, 255, 255, 0.2);">
-                        <h4 class="fw-bold mb-3 text-info" style="font-size: 1.8rem;">For More Details</h4>
-                        <ul class="list-unstyled">
-                            <li class="fs-5 mb-2" style="font-size: 1.3rem;"><strong>Nageshwaran :</strong> +91 1234567899</li>
-                            <li class="fs-5" style="font-size: 1.3rem;"><strong>Dharshini Priya R :</strong> +91 1234567899</li>
-                            <li class="fs-5 mb-2" style="font-size: 1.3rem;"><strong>Dharani :</strong> +91 1234567899</li>
-                            <li class="fs-5" style="font-size: 1.3rem;"><strong>Sharan M :</strong> +91 1234567899</li>
-                        </ul>
-                    </div>
-                    
+          <style>
+            /* Contact Box Styling */
+.contact-box {
+    background: rgba(0, 0, 0, 0.1); /* Light red background */
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 5px solid #000000; /* Red left border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+.contact-box h4 {
+    color: #ffffff; /* Bootstrap Danger Red */
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Contact List */
+.contact-box p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Phone Link Styling */
+.contact-box a {
+    color: #007bff; /* Bootstrap Primary Blue */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-box a:hover {
+    color: #0056b3; /* Darker Blue on Hover */
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-box {
+        padding: 10px 15px;
+    }
+
+    .contact-box h4 {
+        font-size: 1.3rem;
+    }
+
+    .contact-box p {
+        font-size: 1rem;
+    }
+}
+
+          </style>
+        
+            <!-- Contact Info in the Same Line -->
+            <div class="contact-box mt-3 fade-text">
+                <h4 class="fw-bold mb-3 text-danger">For More Details</h4>
+                <div class="d-flex flex-column">
+                  <p class="me-4"><strong>Lingeshwaran R</strong></p>
+                  <p class="me-4"><strong>Pooja Sri G </strong></p>
+                  <p class="me-4"><strong>Vaishnu Deepa T</strong></p>
+                  <p class="me-4"><strong>Alan Durai T</strong> </p>
                 </div>
             </div>
         </div>
-    </div>
+
+
+
+        <style>
+          /* About Event Section */
+.about-event {
+    background:rgba(0,0,0,0.3); /* Light background for contrast */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #000000; /* Blue left border */
+}
+
+/* Left-Aligned Headings */
+.about-event h4 {
+    color: #53b2cd; /* Blue heading color */
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 2px solid #343536;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Paragraph Styling */
+.about-event p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.about-event p::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    margin-top: 5px;
+}
+/* Rules List Styling */
+.about-event ul {
+    list-style: none;  /* Removes default bullet points */
+    padding-left: 0;   /* Ensures alignment with other text */
+    margin-top: 10px;
+}
+
+/* List Items Styling */
+.about-event ul li {
+    font-size: 1.1rem;
+    color: #ffffff;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Custom Bullet Points */
+.about-event ul li::before {
+  
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    left: 0;
+    top: 5px;
+    margin-right: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-event {
+        padding: 20px;
+    }
+
+    .about-event h4 {
+        font-size: 1.3rem;
+    }
+
+    .about-event p,
+    .about-event ul li {
+        font-size: 1rem;
+    }
+}
+
+        </style>
+      <!-- About the Event Below Image & Details -->
+      <div class="about-event mt-5 fade-text">
+          <h4><strong>About The Event:</strong></h4>
+          <p>
+            A Debate Challenge is a structured argument-based competition where participants discuss a topic from opposing viewpoints.
+             The goal is to persuade judges or an audience through logic, evidence, and effective communication.    
+          </p>
+
+          <h4><strong>Rules:</strong></h4>
+          <ul>
+              <li>- participants discuss a topic from their viewpoints.</li>
+              <li>- Player discuss for (Affirmative/Pro) or Against (Negative/Con) a given topic.</li>
+              <li>- Awards : Clarity of words, Structure, Presentation Style and logical thinking</li>
+           
+          </ul>
+      </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 </html>
