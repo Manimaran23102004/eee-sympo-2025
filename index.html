@@ -1226,6 +1226,11 @@ const countdownDate = new Date("April 9, 2025 00:00:00").getTime();
 function updateCountdown() {
     const now = new Date().getTime();
     const timeLeft = countdownDate - now;
+    
+    if (timeLeft <= 0) {
+        document.getElementById("countdown-container").innerHTML = "<h2>Registration is closed!</h2>";
+        return;
+    }
 
     // Convert Time to Days, Hours, Minutes, Seconds
     let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
