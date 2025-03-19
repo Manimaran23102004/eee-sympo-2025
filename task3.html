@@ -416,7 +416,7 @@ html {
           <div class="col-md-6 fade-text d-flex flex-column justify-content-start"><br>
             <div class="d-flex flex-wrap align-items-center event-details">
               <h3 class="me-4"><strong>Date:</strong> 9th April 2025</h3>
-              <h3 class="me-4"><strong>Time:</strong> 11:00 AM - 12:00 PM</h3>
+              <h3 class="me-4"><strong>Time:</strong> 11:45 AM</h3>
               <h3 class="me-4"><strong>Venue:</strong> Smart Class 1st Floor</h3>
             
           </div>
@@ -580,6 +580,19 @@ html {
     .about-event p,
     .about-event ul li {
         font-size: 1rem;
+    }
+}
+.about-event p, 
+.about-event ul li {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-event p, 
+    .about-event ul li {
+        text-align: left; /* Left-align for better readability on mobile */
     }
 }
 

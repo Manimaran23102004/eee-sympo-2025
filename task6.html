@@ -416,7 +416,7 @@ html {
           <div class="col-md-6 fade-text d-flex flex-column justify-content-start"><br>
             <div class="d-flex flex-wrap align-items-center event-details">
               <h3 class="me-4"><strong>Date:</strong> 9th April 2025</h3>
-              <h3 class="me-4"><strong>Time:</strong> 11:00 AM - 12:00 PM</h3>
+              <h3 class="me-4"><strong>Time:</strong> 12:00 PM</h3>
               <h3 class="me-4"><strong>Venue:</strong> Smart Class 1st Floor</h3>
             
           </div>
@@ -425,14 +425,14 @@ html {
               <h2 class="mt-3"><strong>Registration Fee:</strong> ₹250+GST per head</h2>
               <h3 class="me-4"><strong>(Including Lunch and Refreshment)</strong></h3>
           </div>
+        
           <!-- Register Button in the Same Line -->
-          <div class="register-btn-container fade-text">
-            <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdeuQiKFZqoxzzdXZi_VUW-wwk7Y4PN17ZGY31DSzXmx4wNgw/viewform?usp=send_form" target="_blank" class="btn register-btn"><strong>Register Now</strong></a>
-        </div>
+        
           
 
 
           <style>
+            
             /* Contact Box Styling */
 .contact-box {
     background: rgba(0, 0, 0, 0.1); /* Light red background */
@@ -583,6 +583,19 @@ html {
     .about-event p,
     .about-event ul li {
         font-size: 1rem;
+    }
+}
+.about-event p, 
+.about-event ul li {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-event p, 
+    .about-event ul li {
+        text-align: left; /* Left-align for better readability on mobile */
     }
 }
 
